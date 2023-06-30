@@ -1,0 +1,37 @@
+.header {
+  background-color: #fff;
+  padding: 20px;
+}
+
+.header_inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between !important;
+}
+
+.header_paragraph {
+  font-size: 30px;
+  color: #0061F7;
+  font-weight: 700;
+  opacity: 0.9;
+}
+
+.header_date {
+  color: #0061F7;
+  font-size: 20px;
+}
+
+.header_select {
+  border: none;
+  
+}
+
+/* .header_option {} */
+
+.header_mode {
+  margin-left: 30px;
+}
+.header_box {
+  display: flex;
+  align-items: center;
+}

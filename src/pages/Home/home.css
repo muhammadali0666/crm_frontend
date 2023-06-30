@@ -1,0 +1,17 @@
+/* .home {} */
+
+.home_inner {
+  display: flex;
+}
+
+/* .home_left_box {} */
+
+.home_right_box {
+  width: 80vw;
+  padding-left: 0px;
+  padding-top: 0px;
+}
+.home_right_box_inner {
+  padding-left: 20px;
+  display: flex;
+}
