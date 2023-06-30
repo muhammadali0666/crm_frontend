@@ -1,5 +1,5 @@
 .siadebar {
-  height: 100vh;
+  height: 100%;
   background-color:#2F49D1;
   width: 253px;
 }
@@ -43,7 +43,7 @@ margin-bottom: 25px;
 /* .sidebar_link_img {} */
 
 .sidebar_link_text {
-  font-size: 16px;
+  font-size: 20px;
   color: #ffffff;
   margin-left: 20px;
 }

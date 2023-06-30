@@ -1,0 +1,17 @@
+/* .home {} */
+
+.pay_inner {
+  display: flex;
+}
+
+/* .pay_left_box {} */
+
+.pay_right_box {
+  width: 80vw;
+  padding-left: 0px;
+  padding-top: 0px;
+}
+.pay_right_box_inner {
+  padding-left: 20px;
+  display: flex;
+}

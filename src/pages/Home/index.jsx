@@ -1,7 +1,7 @@
-import { Sidebar } from "../../components/Sidebar";
-import {Header} from "../../components/Header"
-import {Card} from "../../components/Card"
 import "./home.css";
+import { Header } from "../../components/Header";
+import { Sidebar } from "../../components/Sidebar";
+import {Card} from "../../components/Card"
 
 export const Home = () => {
   return (
@@ -9,10 +9,10 @@ export const Home = () => {
       <div className="container">
         <div className="home_inner">
           <div className="home_left_box">
-            <Sidebar/>
+            <Sidebar />
           </div>
           <div className="home_right_box">
-            <Header name='Xisobot'/>
+            <Header name="Xisobot" />
             <div className="home_right_box_inner">
               <Card/>
             </div>

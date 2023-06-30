@@ -21,7 +21,7 @@ export const Sidebar = () => {
         <hr className="hr" />
         <ul className="sidebar_list">
           <li className="sidebar_item">
-            <NavLink className='sidebar_link'>
+            <NavLink className='sidebar_link' to='/home'>
               <img src={Home} alt="icon" className="sidebar_link_img" width={20} height={20}/>
               <p className="sidebar_link_text">
                 Xisobot
@@ -29,7 +29,7 @@ export const Sidebar = () => {
             </NavLink>
           </li>
           <li className="sidebar_item">
-            <NavLink className='sidebar_link'>
+            <NavLink className='sidebar_link' to='/students'>
               <img src={Pupils} alt="icon" className="sidebar_link_img" width={22} height={22}/>
               <p className="sidebar_link_text">
                 O'quvchilar
@@ -37,7 +37,7 @@ export const Sidebar = () => {
             </NavLink>
           </li>
           <li className="sidebar_item">
-            <NavLink className='sidebar_link'>
+            <NavLink className='sidebar_link' to='/group'>
               <img src={Group} alt="icon" className="sidebar_link_img" width={20} height={20}/>
               <p className="sidebar_link_text">
                 Guruhlar
@@ -45,7 +45,7 @@ export const Sidebar = () => {
             </NavLink>
           </li>
           <li className="sidebar_item">
-            <NavLink className='sidebar_link'>
+            <NavLink className='sidebar_link' to='/payment'>
               <img src={Payment} alt="icon" className="sidebar_link_img" width={20} height={20}/>
               <p className="sidebar_link_text">
                 To'lovlar
@@ -53,7 +53,7 @@ export const Sidebar = () => {
             </NavLink>
           </li>
           <li className="sidebar_item">
-            <NavLink className='sidebar_link'>
+            <NavLink className='sidebar_link' to='/davomat'>
               <img src={Davomat} alt="icon" className="sidebar_link_img" width={20} height={20}/>
               <p className="sidebar_link_text">
                 Davomat
@@ -61,7 +61,7 @@ export const Sidebar = () => {
             </NavLink>
           </li>
           <li className="sidebar_item">
-            <NavLink className='sidebar_link'>
+            <NavLink className='sidebar_link' to='/apeal'>
               <img src={Messanger} alt="icon" className="sidebar_link_img" width={25} height={25}/>
               <p className="sidebar_link_text">
                 Murojatlar
