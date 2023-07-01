@@ -1,6 +1,7 @@
 import "./attendance.css"
 import { Sidebar } from "../../components/Sidebar"
 import { Header } from "../../components/Header"
+import { AttendanceList } from "../../components/SawAttendance"
 
 export const Attendance = () => {
   return (
@@ -13,7 +14,7 @@ export const Attendance = () => {
         <div className="atenndance_right_box">
           <Header name='Davomat'/>
           <div className="atenndance_right_box_inner">
-            <h1>atenndance</h1>
+            <AttendanceList/>
           </div>
         </div>
       </div>

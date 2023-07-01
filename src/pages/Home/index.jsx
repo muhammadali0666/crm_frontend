@@ -4,6 +4,7 @@ import { Sidebar } from "../../components/Sidebar";
 import {Card} from "../../components/Card"
 
 export const Home = () => {
+
   return (
     <div className="home">
       <div className="container">

@@ -1,8 +1,10 @@
-.group {
-  width: 100%;
+.payment {
+  width: 98%;
+  margin-left: 30px;
+  margin-top: 30px;
 }
 
-.group_paragraph {
+.payment_paragraph {
   font-size: 36px;
   color: #0061F7;
   font-weight: 600;
@@ -11,24 +13,24 @@
 
 /* .sudent_form {} */
 
-.group_box_wrapper {
+.payment_box_wrapper {
   display: flex;
   justify-content: space-between;
 }
 
-.group_form_box {
+.payment_form_box {
   display: flex;
   flex-direction: column;
 }
 
-.group_label {
+.payment_label {
   margin-bottom: 10px;
   font-weight: 600;
   color: #000;
   font-size: 20px;
 }
 
-.group_input {
+.payment_input {
   width: 22vw;
   padding: 8px 12px;
   margin-bottom: 30px;
@@ -39,11 +41,11 @@
   font-size: 16px;
 }
 
-.group_input::-webkit-input-placeholder {
+.payment_input::-webkit-input-placeholder {
   color: #000;
 }
 
-.group_select {
+.payment_select {
   width: 22vw;
   padding: 8px 12px;
   margin-bottom: 30px;
@@ -54,9 +56,9 @@
   font-size: 16px;
 }
 
-/* .group_option {} */
+/* .payment_option {} */
 
-.group_btn {
+.payment_btn {
   width: 22vw;
   border: 1px solid #2F49D1;
   background-color: #2F49D1;
@@ -65,4 +67,5 @@
   padding-bottom: 8px;
   color: #fff;
   font-size: 18px;
+  margin-top: 40px;
 }

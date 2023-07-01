@@ -36,3 +36,13 @@
   display: flex;
   align-items: center;
 }
+
+@media (max-width: 1000px) {
+  .header_paragraph {
+    font-size: 30px;
+    color: #0061F7;
+    font-weight: 700;
+    opacity: 0.9;
+    margin-left: 50px;
+  }
+}

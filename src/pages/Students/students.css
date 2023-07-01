@@ -16,3 +16,14 @@
   display: flex;
   flex-direction: column;
 }
+
+@media (max-width: 1000px) {
+  .student_right_box {
+    width: 100vw;
+    padding-left: 0px;
+    padding-top: 0px;
+  }
+  .student_right_box_inner {
+    padding-left: 0px;
+  }
+}

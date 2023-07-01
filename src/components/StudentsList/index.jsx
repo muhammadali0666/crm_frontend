@@ -1,6 +1,5 @@
 import "./studentsListt.css";
 import Delete from "../../assets/delete.png"
-import Search from "../../assets/search.png"
 
 export const StudentsList = () => {
   return (

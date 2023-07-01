@@ -7,6 +7,7 @@ import { Groups } from "../pages/Group";
 import { Payment } from "../pages/Payment";
 import { Attendance } from "../pages/Attendance";
 import { Apeal } from "../pages/Appeal/inde";
+import { NotFound } from "../pages/NotFound";
 
 export const RouteWrapper = () => {
   return (
@@ -18,7 +19,8 @@ export const RouteWrapper = () => {
       <Route path="/group" element={<Groups />} />
       <Route path="/payment" element={<Payment />} />
       <Route path="/davomat" element={<Attendance />} />
-      <Route path="/apeal" element={<Apeal/>}/>
+      <Route path="/apeal" element={<Apeal />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 };

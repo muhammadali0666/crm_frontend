@@ -50,6 +50,7 @@ tr {
 .student_list_paragraph {
   color: #0061F7;
   font-size: 36px;
+  font-weight: 500;
 }
 
 .student_list_input {
@@ -65,3 +66,110 @@ tr {
 
 
 /* .table_img {} */
+
+@media (max-width: 1130px) {
+  .student_list {
+    margin-bottom: 70px;
+  }
+  
+  .student_list_box {
+    padding-bottom: 100px;
+  }
+  
+  table {
+    width: 100%;
+  }
+  
+  thead tr th {
+    padding: 10px;
+  }
+  
+  tbody tr {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  tr {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  
+  .tbody {
+    padding: 10px !important;
+  }
+  
+  .student_list_header {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    margin-bottom: 20px;
+  }
+  
+  .student_list_paragraph {
+    font-size: 30px;
+  }
+  
+  .student_list_input {
+    padding: 14px 16px;
+    height: 26px;
+    font-weight: 600;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 850px) {
+  .student_list {
+    margin-bottom: 70px;
+    overflow: scroll !important;
+  }
+  
+  .student_list_box {
+    padding-bottom: 60px;
+  }
+  
+  table {
+    width: 100%;
+  }
+  
+  thead tr th {
+    padding: 10px;
+  }
+  
+  tbody tr {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  tr {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  
+  .tbody {
+    padding: 10px !important;
+  }
+  
+  .student_list_header {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    margin-bottom: 20px;
+  }
+  
+  .student_list_paragraph {
+    font-size: 30px;
+  }
+  
+  .student_list_input {
+    padding: 14px 16px;
+    height: 26px;
+    font-weight: 600;
+    font-size: 14px;
+  }
+}

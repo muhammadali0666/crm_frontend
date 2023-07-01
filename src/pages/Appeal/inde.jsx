@@ -1,6 +1,8 @@
 import "./apeal.css"
 import { Sidebar } from "../../components/Sidebar"
 import { Header } from "../../components/Header"
+import { ApealList } from "../../components/ApealList"
+import { ApealTwoList } from "../../components/ApealTwoList"
 
 export const Apeal = () => {
   return (
@@ -13,7 +15,8 @@ export const Apeal = () => {
         <div className="apeal_right_box">
           <Header name='Murojatlar'/>
           <div className="apeal_right_box_inner">
-            <h1>apeal</h1>
+            <ApealList/>
+            <ApealTwoList/>
           </div>
         </div>
       </div>

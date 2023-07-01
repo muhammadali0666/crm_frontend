@@ -2,6 +2,7 @@ import "./group.css"
 import { Sidebar } from "../../components/Sidebar"
 import { Header } from "../../components/Header"
 import { AddGroup } from "../../components/AddGroup"
+import { GroupList } from "../../components/GroupList"
 
 export const Groups = () => {
   return (
@@ -15,6 +16,7 @@ export const Groups = () => {
           <Header name='Guruhlar'/>
           <div className="group_right_box_inner">
            <AddGroup/>
+           <GroupList/>
           </div>
         </div>
       </div>

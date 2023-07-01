@@ -1,17 +1,17 @@
-/* .group_list {} */
+/* .attendance_list {} */
 
-.group_list_header {
+.attendance_list_header {
   display: flex;
   justify-content: space-between;
   margin-top: 50px;
 }
 
-.group_list_header_paragraph {
+.attendance_list_header_paragraph {
   font-size: 36px;
   color: #0061F7;
 }
 
-.group_list_input {
+.attendance_list_input {
   padding: 18px 20px;
   height: 26px;
   border-radius: 8px;
@@ -22,7 +22,7 @@
   box-shadow: 0px 4px 12px 0px #00000033;
 }
 
-.group_list_ul {
+.attendance_list_ul {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
@@ -30,7 +30,7 @@
   margin-top: 30px;
 }
 
-.grop_list_item {
+.attendance_list_item {
   width: 30%;
   box-shadow: 0px 10px 20px 0px #00000033;
   background-color: #fff;
@@ -40,7 +40,7 @@
   overflow: hidden;
 }
 
-.grup_list_card_paragraph {
+.attendance_list_card_paragraph {
   background-color: #0061F7;
   color: #fff;
   text-align: center;
@@ -50,35 +50,35 @@
  border-top-right-radius: 8px;
 }
 
-.grup_list_card_top {
+.attendance_list_card_top {
   display: flex;
   align-items: center;
 }
 
-/* .grup_list_card_img {} */
+/* .attendance_list_card_img {} */
 
-.grup_list_card_span {
+.attendance_list_card_span {
   padding-right: 20px;
 }
 
-/* .grup_list_card_top_list {} */
+/* .attendance_list_card_top_list {} */
 
-.grup_list_card_top_item {
+.attendance_list_card_top_item {
   display: flex;
 }
 
-.grup_list_card_top_item+.grup_list_card_top_item {
+.attendance_list_card_top_item+.attendance_list_card_top_item {
   margin-top: 7px;
 }
- .grup_list_card_top_p {
+ .attendance_list_card_top_p {
   margin-right: 10px;
  } 
 
-/* .grup_list_card_top_text {}
+/* .attendance_list_card_top_text {}
 
-.grup_list_card_bottom_list {}  */
+.attendance_list_card_bottom_list {}  */
 
-.grup_list_card_bottom_item {
+.attendance_list_card_bottom_item {
   display: flex;
   justify-content: space-between;
   padding-left: 20px;
@@ -87,12 +87,12 @@
   margin-bottom: 10px;
 }
 
-.grup_list_card_bottom_p {
+.attendance_list_card_bottom_p {
   color: #001062;
   font-size: 14px;
   font-weight: 700;
 }
 
-.grup_list_card_bottom_text {
+.attendance_list_card_bottom_text {
   font-size: 14px;
 }
