@@ -24,3 +24,13 @@ ul {
 a {
   text-decoration: none;
 }
+
+@media (max-width: 520px) {
+  .container {
+    max-width: 1480px;
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

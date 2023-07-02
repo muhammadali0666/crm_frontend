@@ -1,6 +1,6 @@
 import "./header.css";
 import Mode from "../../assets/mode.png";
-import Notificate from "../../assets/notificate.png";
+// import Notificate from "../../assets/notificate.png";
 
 export const Header = (props) => {
   let newDate = new Date();
@@ -29,13 +29,13 @@ export const Header = (props) => {
           width={40}
           height={40}
         />
-        <img
+        {/* <img
           src={Notificate}
           alt="mode"
           className="header_mode"
           width={40}
           height={40}
-        />
+        /> */}
         </div>
       </div>
     </div>

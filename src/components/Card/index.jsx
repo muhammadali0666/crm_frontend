@@ -14,7 +14,7 @@ export const Card = () => {
             <img
               src={Icon}
               alt="icon"
-              className="car_img"
+              className="card_img"
               width={100}
               height={100}
             />
@@ -29,7 +29,7 @@ export const Card = () => {
             <img
               src={Icon}
               alt="icon"
-              className="car_img"
+              className="card_img"
               width={100}
               height={100}
             />
@@ -46,7 +46,7 @@ export const Card = () => {
             <img
               src={Icon}
               alt="icon"
-              className="car_img"
+              className="card_img"
               width={100}
               height={100}
             />
@@ -61,7 +61,7 @@ export const Card = () => {
             <img
               src={Icon}
               alt="icon"
-              className="car_img"
+              className="card_img"
               width={100}
               height={100}
             />

@@ -34,10 +34,9 @@ export const Sidebar = () => {
               <NavLink className="sidebar_link" to="/home">
                 {({ isActive, isPending }) => (
                   <span
-                  style={{ display: "flex" }}
+                    style={{ display: "flex" }}
                     className={isActive ? "actives" : ""}
                   >
-                    {" "}
                     <img
                       src={Home}
                       alt="icon"
@@ -57,7 +56,6 @@ export const Sidebar = () => {
                     style={{ display: "flex" }}
                     className={isActive ? "actives" : ""}
                   >
-                    {" "}
                     <img
                       src={Pupils}
                       alt="icon"
@@ -77,7 +75,6 @@ export const Sidebar = () => {
                     style={{ display: "flex" }}
                     className={isActive ? "actives" : ""}
                   >
-                    {" "}
                     <img
                       src={Group}
                       alt="icon"
@@ -97,7 +94,6 @@ export const Sidebar = () => {
                     style={{ display: "flex" }}
                     className={isActive ? "actives" : ""}
                   >
-                    {" "}
                     <img
                       src={Payment}
                       alt="icon"
@@ -117,7 +113,6 @@ export const Sidebar = () => {
                     style={{ display: "flex" }}
                     className={isActive ? "actives" : ""}
                   >
-                    {" "}
                     <img
                       src={Davomat}
                       alt="icon"
@@ -137,7 +132,6 @@ export const Sidebar = () => {
                     style={{ display: "flex" }}
                     className={isActive ? "actives" : ""}
                   >
-                    {" "}
                     <img
                       src={Messanger}
                       alt="icon"

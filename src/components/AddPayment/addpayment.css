@@ -24,6 +24,7 @@
 }
 
 .payment_label {
+  width: 21vw;
   margin-bottom: 10px;
   font-weight: 600;
   color: #000;
@@ -31,7 +32,7 @@
 }
 
 .payment_input {
-  width: 22vw;
+  width: 98%;
   padding: 8px 12px;
   margin-bottom: 30px;
   border-radius: 8px;
@@ -39,6 +40,7 @@
   color: #000000;
   font-weight: 600;
   font-size: 16px;
+  margin-top: 10px;
 }
 
 .payment_input::-webkit-input-placeholder {
@@ -46,7 +48,7 @@
 }
 
 .payment_select {
-  width: 22vw;
+  width: 98%;
   padding: 8px 12px;
   margin-bottom: 30px;
   border-radius: 8px;
@@ -54,12 +56,11 @@
   color: #000000;
   font-weight: 600;
   font-size: 16px;
+  margin-top: 10px;
 }
 
-/* .payment_option {} */
-
 .payment_btn {
-  width: 22vw;
+  width: 20.5vw;
   border: 1px solid #2F49D1;
   background-color: #2F49D1;
   border-radius: 8px;
@@ -68,4 +69,244 @@
   color: #fff;
   font-size: 18px;
   margin-top: 40px;
+}
+
+@media (max-width: 1000px) {
+  .payment {
+    width: 100%;
+    margin-left: 0px;
+    margin-top: 30px;
+  }
+  
+  .payment_paragraph {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  
+  .payment_box_wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .payment_form_box {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .payment_label {
+    width: 28vw;
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 20px;
+  }
+  
+  .payment_input {
+    width: 98%;
+    padding: 8px 12px;
+    margin-bottom: 30px;
+    font-weight: 600;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  
+  .payment_select {
+    width: 98%;
+    padding: 8px 12px;
+    margin-bottom: 30px;
+    font-weight: 600;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  
+  .payment_btn {
+    width: 28vw;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 18px;
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 700px) {
+  .payment {
+    width: 100%;
+    margin-left: 0px;
+    margin-top: 30px;
+  }
+  
+  .payment_paragraph {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  
+  .payment_box_wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 20px;
+  }
+  
+  .payment_form_box {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .payment_label {
+    width: 28vw;
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 16px;
+  }
+  
+  .payment_input {
+    width: 98%;
+    padding: 8px 12px;
+    margin-bottom: 30px;
+    font-weight: 600;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
+  .payment_select {
+    width: 98%;
+    padding: 8px 12px;
+    margin-bottom: 30px;
+    font-weight: 600;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
+  .payment_btn {
+    width: 28vw;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 14px;
+    margin-top: 36px;
+  }
+}
+
+@media (max-width: 552px) {
+  .payment {
+    width: 100%;
+    margin-left: 0px;
+    margin-top: 30px;
+  }
+  
+  .payment_paragraph {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  
+  .payment_box_wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 20px;
+    flex-direction: column;
+  }
+  
+  .payment_form_box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .payment_label {
+    width: 45vw;
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 16px;
+  }
+  
+  .payment_input {
+    width: 100%;
+    padding: 8px 12px;
+    margin-bottom: 30px;
+    font-weight: 600;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
+  .payment_select {
+    width: 100%;
+    padding: 8px 12px;
+    margin-bottom: 30px;
+    font-weight: 600;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
+  .payment_btn {
+    width: 45vw;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 14px;
+    margin-top: 32px;
+    height: 36px;
+  }
+}
+
+@media (max-width: 520px) {
+  .payment {
+    width: 100%;
+    margin-left: 0px;
+    margin-top: 30px;
+  }
+  
+  .payment_paragraph {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding-left: 20px;
+  }
+  
+  .payment_box_wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 20px;
+    flex-direction: column;
+    padding-left: 20px;
+  }
+  
+  .payment_form_box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  
+  .payment_label {
+    width: 92vw;
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 16px;
+  }
+  
+  .payment_input {
+    width: 100%;
+    padding: 8px 12px;
+    margin-bottom: 30px;
+    font-weight: 600;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
+  .payment_select {
+    width: 100%;
+    padding: 8px 12px;
+    margin-bottom: 30px;
+    font-weight: 600;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
+  .payment_btn {
+    width: 92vw;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 14px;
+    margin-top: 32px;
+    height: 36px;
+  }
 }

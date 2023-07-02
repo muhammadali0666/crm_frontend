@@ -9,7 +9,6 @@ export const AddGroup = () => {
           <div className="group_form_box">
             <label htmlFor="ism" className="group_label">
               Guruh yo’nalishi
-            </label>
             <select className="group_select" defaultValue="">
               <option value="ona-tili" className="group_option">
                 ona-tili
@@ -18,20 +17,20 @@ export const AddGroup = () => {
                 adabiyot
               </option>
             </select>
+            </label>
             <label htmlFor="teacher" className="group_label">
               O’qituvchi
-            </label>
             <input
               type="text"
               className="group_input"
               placeholder="Muhammadali Shuhratjonov"
               id="teacher"
             />
+            </label>
           </div>
           <div className="group_form_box">
             <label htmlFor="telefon" className="group_label">
               Dars kunlari
-            </label>
             <select className="group_select" defaultValue="">
               <option value="dushanba" className="group_option">
                 dushanba
@@ -55,35 +54,36 @@ export const AddGroup = () => {
                 yakshanba
               </option>
             </select>
+            </label>
             <label htmlFor="Ota-onasi-nomeri" className="group_label">
               O’qituvchi telefon nomeri
-            </label>
             <input
               type="number"
               className="group_input"
               placeholder="+998 90 *** ** **"
               id="Ota-onasi-nomeri"
             />
+            </label>
           </div>
           <div className="group_form_box">
             <label className="group_label" htmlFor="time">
               Dars vaqti
-            </label>
             <input
               type="date"
               className="group_input"
               placeholder="Yuklash"
               id="time"
             />
+            </label>
             <label htmlFor="rasm" className="group_label">
               O’qituvchi rasmi (3x4)
-            </label>
             <input
               type="file"
-              className="group_input"
+              className="group_input group_input_extra"
               placeholder="Yuklash "
               id="rasm"
             />
+            </label>
             <button className="group_btn" type="submit">
               Qo’shish
             </button>

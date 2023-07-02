@@ -11,7 +11,53 @@
   padding-left: 0px;
   padding-top: 0px;
 }
+
 .home_right_box_inner {
   padding-left: 20px;
   display: flex;
+}
+
+@media (max-width: 1000px) {
+  /* .home {} */
+
+  .home_inner {
+    display: flex;
+  }
+
+  /* .home_left_box {} */
+
+  .home_right_box {
+    width: 100vw;
+    padding-left: 0px;
+    padding-top: 0px;
+  }
+
+  .home_right_box_inner {
+    width: 100%;
+    padding-left: 0px;
+    display: flex;
+  }
+
+}
+@media (max-width: 520px) {
+  /* .home {} */
+
+  .home_inner {
+    display: flex;
+  }
+
+  /* .home_left_box {} */
+
+  .home_right_box {
+    width: 100vw;
+    padding-left: 0px;
+    padding-top: 0px;
+  }
+
+  .home_right_box_inner {
+    width: 100%;
+    padding-left: 0px;
+    display: flex;
+  }
+
 }

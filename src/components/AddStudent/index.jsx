@@ -65,7 +65,7 @@ export const AddStudent = () => {
             </label>
             <input
               type="file"
-              className="student_input"
+              className="student_input student_input_extra"
               placeholder="Yuklash "
               id="rasm"
             />
