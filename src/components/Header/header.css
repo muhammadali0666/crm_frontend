@@ -1,3 +1,10 @@
+.light {
+  background-color: #EAEDFA;
+}
+.other {
+  background: #ffffff;
+}
+
 .header {
   background-color: #fff;
   padding: 20px;

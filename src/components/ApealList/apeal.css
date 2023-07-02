@@ -69,3 +69,63 @@ tr {
 
 
 /* .table_img {} */
+
+@media (max-width: 1250px) {
+  .apeal_list {
+    margin-bottom: 70px;
+  }
+  
+  .apeal_list_box {
+    padding-bottom: 100px;
+  }
+  
+  table {
+    width: 100%;
+  }
+  
+  thead tr {
+    color: #fff;
+  }
+  
+  thead tr th {
+    padding: 10px;
+  }
+  
+  tbody tr {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  tr {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .tbody {
+    padding: 10px !important;
+  }
+  
+  .apeal_list_header {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    margin-bottom: 20px;
+  }
+  
+  .apeal_list_paragraph {
+    font-size: 36px;
+  }
+  
+  .apeal_list_input {
+    padding: 18px 20px;
+    height: 26px;
+    font-weight: 600;
+    font-size: 16px;
+  }
+  
+  .long_text {
+    width: 50%;
+  }
+}
