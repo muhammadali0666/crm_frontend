@@ -1,8 +1,8 @@
 import "./addStudent.css";
-
-import React from "react";
+// import { useState, useEffect } from "react";
 
 export const AddStudent = () => {
+
   return (
     <div className="student">
       <h2 className="student_paragraph">

@@ -15,6 +15,7 @@
 .home_right_box_inner {
   padding-left: 20px;
   display: flex;
+  flex-direction: column;
 }
 
 @media (max-width: 1000px) {
