@@ -1,14 +1,24 @@
 import "./card.css";
 import Icon from "../../assets/icon.png";
+import { useEffect, useState } from "react";
 
 export const Card = () => {
+
+  const [studentData, setStudentData] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:4001/get_students")
+      .then((res) => res.json())
+      .then((data) => setStudentData(data));
+  }, []);
+
   return (
     <div className="card_wrapper">
       <div className="card_wrapper_inner">
         <div className="card">
           <div className="card_one">
             <h3 className="card_paragraph">Jami o’quvchilar soni:</h3>
-            <p className="card_text">255 ta</p>
+            <p className="card_text">{studentData.length} ta</p>
           </div>
           <div className="card_two">
             <img

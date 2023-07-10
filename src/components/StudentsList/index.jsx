@@ -3,6 +3,13 @@ import Delete from "../../assets/delete.png";
 import { useState, useEffect } from "react";
 
 export const StudentsList = () => {
+
+  // const [num, setNum] = useState(0);
+
+  //   const CounterI = () => {
+  //     setNum(num + 1);
+  //   };
+
   const [studentData, setStudentData] = useState([]);
 
   useEffect(() => {
@@ -10,6 +17,16 @@ export const StudentsList = () => {
       .then((res) => res.json())
       .then((data) => setStudentData(data));
   }, []);
+
+  const handleDelete = (e) => {
+    fetch(`http://localhost:4001/student_remove/${e}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data))
+      .catch((error) => console.error(error));
+    window.location.reload();
+  };
 
   return (
     <div className="student_list">
@@ -38,25 +55,25 @@ export const StudentsList = () => {
           <tbody className="tbody">
             {studentData.length &&
               studentData.map((element, idx) => (
-                  <tr key={idx}>
-                    <th scope="col">{studentData.length}</th>
-                    <td>{element.name}</td>
-                    <td>{element.phoneNumber}</td>
-                    <td>{element.science}</td>
-                    <td>{element.parentName}</td>
-                    <td>{element.parentNumber}</td>
-                    <td>
-                      <img
-                        src={Delete}
-                        alt="delete"
-                        className="table_img"
-                        width={18}
-                        height={18}
-                      />
-                    </td>
-                  </tr>
+                <tr key={idx}>
+                  <th scope="col">{idx+1}</th>
+                  <td>{element.name}</td>
+                  <td>{element.phoneNumber}</td>
+                  <td>{element.science}</td>
+                  <td>{element.parentName}</td>
+                  <td>{element.parentNumber}</td>
+                  <td>
+                    <img
+                      src={Delete}
+                      alt="delete"
+                      className="table_img"
+                      width={18}
+                      height={18}
+                      onClick={() => handleDelete(element.id)}
+                    />
+                  </td>
+                </tr>
               ))}
-            <hr />
           </tbody>
         </table>
       </div>
