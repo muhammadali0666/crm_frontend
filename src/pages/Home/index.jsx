@@ -29,9 +29,9 @@ export const Home = () => {
             <Sidebar />
           </div>
           <div className="home_right_box">
-            <Header name="Xisobot" />
+            <Header name="Xisobot"/>
             <div className="home_right_box_inner">
-              <Card />
+              <Card/>
               <BarChart chartData={userData} />
             </div>
           </div>

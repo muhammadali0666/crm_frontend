@@ -5,11 +5,34 @@ import { useEffect, useState } from "react";
 export const Card = () => {
 
   const [studentData, setStudentData] = useState([]);
-
+  const [teacherData, setTeacherData] = useState([]);
+  const [groups, setGroups] = useState([]);
+  const [deletedStudents, setDeletedStudents] = useState([]);
+///////////////////////////
+  useEffect(() => {
+    fetch("http://localhost:4001/get_deleted")
+      .then((res) => res.json())
+      .then((data) => setDeletedStudents(data))
+      .catch((err) => console.log(err));
+  }, []);
+///////////////////////////////////////
+  useEffect(() => {
+    fetch("http://localhost:4001/get_groups")
+      .then((res) => res.json())
+      .then((data) => setGroups(data))
+      .catch((err) => console.log(err));
+  }, []);
+///////////////////////////////////////
   useEffect(() => {
     fetch("http://localhost:4001/get_students")
       .then((res) => res.json())
       .then((data) => setStudentData(data));
+  }, []);
+////////////////////////////////
+  useEffect(() => {
+    fetch("http://localhost:4001/get_teacher")
+      .then((res) => res.json())
+      .then((data) => setTeacherData(data));
   }, []);
 
   return (
@@ -33,7 +56,7 @@ export const Card = () => {
         <div className="card1 card">
           <div className="card_one">
             <h3 className="card_paragraph">O’qituvchilar soni:</h3>
-            <p className="card_text">20 ta</p>
+            <p className="card_text">{teacherData.length} ta</p>
           </div>
           <div className="card_two">
             <img
@@ -50,7 +73,7 @@ export const Card = () => {
         <div className="card">
           <div className="card_one">
             <h3 className="card_paragraph">Shu oy tark etganlar:</h3>
-            <p className="card_text">25 ta</p>
+            <p className="card_text">{deletedStudents.length} ta</p>
           </div>
           <div className="card_two">
             <img
@@ -65,7 +88,7 @@ export const Card = () => {
         <div className="card1 card">
           <div className="card_one">
             <h3 className="card_paragraph">Jami guruhlar soni</h3>
-            <p className="card_text">20 ta</p>
+            <p className="card_text">{groups.length} ta</p>
           </div>
           <div className="card_two">
             <img

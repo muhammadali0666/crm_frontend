@@ -19,7 +19,6 @@ export const AddGroup = () => {
   const formData = new FormData();
   formData.append("file", rasm);
   formData.append("upload_preset", "chatImages");
-  console.log(formData);
 
   const handleData = async (e) => {
     e.preventDefault();

@@ -8,14 +8,20 @@ import { Payment } from "../pages/Payment";
 import { Attendance } from "../pages/Attendance";
 import { Apeal } from "../pages/Appeal/inde";
 import { NotFound } from "../pages/NotFound";
+import { useState } from "react";
 
 export const RouteWrapper = () => {
+
+  const [searchStudent, setSearchStudent] = useState([]);
+
+  console.log(searchStudent);
+
   return (
     <Routes>
       <Route path="/" element={<Register />} />
       <Route path="/login" element={<Login />} />
       <Route path="/home" element={<Home />} />
-      <Route path="/students" element={<Students />} />
+      <Route path="/students" element={<Students searchStudent={searchStudent} setSearchStudent={setSearchStudent}/>} />
       <Route path="/group" element={<Groups />} />
       <Route path="/payment" element={<Payment />} />
       <Route path="/davomat" element={<Attendance />} />

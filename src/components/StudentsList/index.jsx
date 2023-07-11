@@ -3,14 +3,9 @@ import Delete from "../../assets/delete.png";
 import { useState, useEffect } from "react";
 
 export const StudentsList = () => {
-
-  // const [num, setNum] = useState(0);
-
-  //   const CounterI = () => {
-  //     setNum(num + 1);
-  //   };
-
   const [studentData, setStudentData] = useState([]);
+  const [searchVal, setSearchVal] = useState("")
+  const [searchStudent, setSearchStudent] = useState([])
 
   useEffect(() => {
     fetch("http://localhost:4001/get_students")
@@ -28,16 +23,35 @@ export const StudentsList = () => {
     window.location.reload();
   };
 
+  /////////////////////////////////////////////////////////////// SEARCH
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+     fetch("http://localhost:4001/search_student", {
+      method: "GET",
+      headers: { search: searchVal },
+    })
+      .then((res) => res.json())
+      .then((data) => setSearchStudent(data))
+      .catch((error) => console.error(error));
+  };
+
   return (
     <div className="student_list">
       <div className="student_list_header">
         <h3 className="student_list_paragraph">Bizning o’quvchilar</h3>
         {/* <img src={Search} alt="serach" className="student_list_serch" width={24} height={24}/> */}
-        <input
-          type="text"
-          className="student_list_input"
-          placeholder="search..."
-        />
+        <form onChange={(e) => handleSearch(e)}>
+          <input
+            type="text"
+            className="student_list_input"
+            placeholder="search..."
+            name="search"
+            required
+            value={searchVal}
+            onChange={(e) => setSearchVal(e.target.value)}
+          />
+        </form>
       </div>
       <div className="student_list_box">
         <table className="table">
@@ -53,27 +67,52 @@ export const StudentsList = () => {
             </tr>
           </thead>
           <tbody className="tbody">
-            {studentData.length &&
-              studentData.map((element, idx) => (
-                <tr key={idx}>
-                  <th scope="col">{idx+1}</th>
-                  <td>{element.name}</td>
-                  <td>{element.phoneNumber}</td>
-                  <td>{element.science}</td>
-                  <td>{element.parentName}</td>
-                  <td>{element.parentNumber}</td>
-                  <td>
-                    <img
-                      src={Delete}
-                      alt="delete"
-                      className="table_img"
-                      width={18}
-                      height={18}
-                      onClick={() => handleDelete(element.id)}
-                    />
-                  </td>
-                </tr>
-              ))}
+            {searchStudent.length !== 0
+              ? searchStudent.map((element, idx) =>
+                  element.length !== 0 ? (
+                    <tr key={idx}>
+                      <th scope="col">{idx + 1}</th>
+                      <td>{element.name}</td>
+                      <td>{element.phoneNumber}</td>
+                      <td>{element.science}</td>
+                      <td>{element.parentName}</td>
+                      <td>{element.parentNumber}</td>
+                      <td>
+                        <img
+                          src={Delete}
+                          alt="delete"
+                          className="table_img"
+                          width={18}
+                          height={18}
+                          onClick={() => handleDelete(element.id)}
+                        />
+                      </td>
+                    </tr>
+                  ) : null
+                )
+              : studentData.length !== 0 &&
+                studentData.map((element, idx) =>
+                  element.length !== 0 ? (
+                    <tr key={idx}>
+                      <th scope="col">{idx + 1}</th>
+                      <td>{element.name}</td>
+                      <td>{element.phoneNumber}</td>
+                      <td>{element.science}</td>
+                      <td>{element.parentName}</td>
+                      <td>{element.parentNumber}</td>
+                      <td>
+                        <img
+                          src={Delete}
+                          alt="delete"
+                          className="table_img"
+                          width={18}
+                          height={18}
+                          onClick={() => handleDelete(element.id)}
+                        />
+                      </td>
+                    </tr>
+                  ) : null
+                )}
           </tbody>
         </table>
       </div>
