@@ -4,8 +4,8 @@ import { useState, useEffect } from "react";
 
 export const StudentsList = () => {
   const [studentData, setStudentData] = useState([]);
-  const [searchVal, setSearchVal] = useState("")
-  const [searchStudent, setSearchStudent] = useState([])
+  const [searchStudent, setSearchStudent] = useState([]);
+
 
   useEffect(() => {
     fetch("http://localhost:4001/get_students")
@@ -25,15 +25,17 @@ export const StudentsList = () => {
 
   /////////////////////////////////////////////////////////////// SEARCH
 
-  const handleSearch = (e) => {
+  const handleSearch = async(e) => {
     e.preventDefault();
-     fetch("http://localhost:4001/search_student", {
+    const { search } = e.target;
+   await fetch("http://localhost:4001/search_student", {
       method: "GET",
-      headers: { search: searchVal },
+      headers: { search: search.value },
     })
       .then((res) => res.json())
-      .then((data) => setSearchStudent(data))
+      .then((data1) => setSearchStudent(data1))
       .catch((error) => console.error(error));
+      search.value = "";
   };
 
   return (
@@ -41,15 +43,13 @@ export const StudentsList = () => {
       <div className="student_list_header">
         <h3 className="student_list_paragraph">Bizning o’quvchilar</h3>
         {/* <img src={Search} alt="serach" className="student_list_serch" width={24} height={24}/> */}
-        <form onChange={(e) => handleSearch(e)}>
+        <form onSubmit={(e) => handleSearch(e)}>
           <input
             type="text"
             className="student_list_input"
             placeholder="search..."
             name="search"
             required
-            value={searchVal}
-            onChange={(e) => setSearchVal(e.target.value)}
           />
         </form>
       </div>

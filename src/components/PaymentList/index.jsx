@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 
 export const PaymentsList = () => {
   const [myData, setMyData] = useState([]);
+  const [searchPaymentors, setSearchPaymentors] = useState([]);
 
   useEffect(() => {
     fetch(`http://localhost:4001/get_paymentors`)
@@ -12,16 +13,35 @@ export const PaymentsList = () => {
       .catch((err) => console.error(err));
   }, []);
 
+  ///////////////////////////////////////////// search
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    let { search } = e.target;
+    fetch(`http://localhost:4001/search_paymentors`, {
+      method: "GET",
+      headers: { search: search.value },
+    })
+      .then((res) => res.json())
+      .then((data) => setSearchPaymentors(data))
+      .catch((err) => console.error(err));
+    search.value = "";
+  };
+
   return (
     <div className="payment_list">
       <div className="payment_list_header">
         <h3 className="payment_list_paragraph">Bizning o’quvchilar</h3>
         {/* <img src={Search} alt="serach" className="payment_list_serch" width={24} height={24}/> */}
-        <input
-          type="text"
-          className="payment_list_input"
-          placeholder="search..."
-        />
+        <form onSubmit={(e) => handleSearch(e)}>
+          <input
+            type="text"
+            className="payment_list_input"
+            placeholder="search..."
+            required
+            name="search"
+          />
+        </form>
       </div>
       <div className="payment_list_box">
         <table className="table">
@@ -37,26 +57,50 @@ export const PaymentsList = () => {
             </tr>
           </thead>
           <tbody className="tbody">
-            {myData.length &&
-              myData.map((element, idx) => (
-                  <tr key={idx}>
-                    <th scope="col">{idx+1}</th>
-                    <td>{element.oquvchiIsmi}</td>
-                    <td>{element.number}</td>
-                    <td>{element.yonalish}</td>
-                    <td>{element.oqituvchiIsm}</td>
-                    <td>{element.tolovKuni}</td>
-                    <td>
-                      <img
-                        src={Completed}
-                        alt="delete"
-                        className="table_img"
-                        width={20}
-                        height={16}
-                      />
-                    </td>
-                  </tr>
-              ))}
+            {searchPaymentors.length !== 0
+              ? searchPaymentors.map((element, idx) =>
+                  element.length !== 0 ? (
+                    <tr key={idx}>
+                      <th scope="col">{idx + 1}</th>
+                      <td>{element.oquvchiIsmi}</td>
+                      <td>{element.number}</td>
+                      <td>{element.yonalish}</td>
+                      <td>{element.oqituvchiIsm}</td>
+                      <td>{element.tolovKuni}</td>
+                      <td>
+                        <img
+                          src={Completed}
+                          alt="delete"
+                          className="table_img"
+                          width={20}
+                          height={16}
+                        />
+                      </td>
+                    </tr>
+                  ) : null
+                )
+              : myData.length !== 0 &&
+                myData.map((element, idx) =>
+                  element.length !== 0 ? (
+                    <tr key={idx}>
+                      <th scope="col">{idx + 1}</th>
+                      <td>{element.oquvchiIsmi}</td>
+                      <td>{element.number}</td>
+                      <td>{element.yonalish}</td>
+                      <td>{element.oqituvchiIsm}</td>
+                      <td>{element.tolovKuni}</td>
+                      <td>
+                        <img
+                          src={Completed}
+                          alt="delete"
+                          className="table_img"
+                          width={20}
+                          height={16}
+                        />
+                      </td>
+                    </tr>
+                  ) : null
+                )}
           </tbody>
         </table>
       </div>

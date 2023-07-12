@@ -72,7 +72,7 @@ export const Card = () => {
       <div className="card_wrapper_inner">
         <div className="card">
           <div className="card_one">
-            <h3 className="card_paragraph">Shu oy tark etganlar:</h3>
+            <h3 className="card_paragraph">tark etganlar:</h3>
             <p className="card_text">{deletedStudents.length} ta</p>
           </div>
           <div className="card_two">
