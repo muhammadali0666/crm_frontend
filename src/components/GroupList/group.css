@@ -1,5 +1,16 @@
 /* .group_list {} */
 
+.grop_list_item_link {
+  width: 30%;
+  box-shadow: 0px 10px 20px 0px #00000033;
+  background-color: #fff;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  text-decoration: none;
+  color: #000;
+}
+
 .group_list_header {
   display: flex;
   justify-content: space-between;
@@ -31,12 +42,8 @@
 }
 
 .grop_list_item {
-  width: 30%;
-  box-shadow: 0px 10px 20px 0px #00000033;
-  background-color: #fff;
-  border-radius: 8px;
+  width: 100%;
   padding-bottom: 40px;
-  margin-bottom: 20px;
   overflow: hidden;
 }
 
@@ -130,10 +137,17 @@
     margin-top: 30px;
   }
 
-  .grop_list_item {
-    width: 31%;
-    padding-bottom: 40px;
+  .grop_list_item_link {
+    width: 30%;
     margin-bottom: 20px;
+    overflow: hidden;
+    text-decoration: none;
+    color: #000;
+  }
+
+  .grop_list_item {
+    width: 100%;
+    padding-bottom: 40px;
     overflow: hidden;
   }
 
@@ -194,6 +208,17 @@
     margin-top: 50px;
   }
 
+  .grop_list_item_link {
+    width: 48%;
+    box-shadow: 0px 10px 20px 0px #00000033;
+    background-color: #fff;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    text-decoration: none;
+    color: #000;
+  }
+
   .group_list_header_paragraph {
     font-size: 30px;
     font-weight: 500;
@@ -215,7 +240,7 @@
   }
 
   .grop_list_item {
-    width: 40%;
+    width: 100%;
     padding-bottom: 20px;
     margin-bottom: 20px;
     overflow: hidden;
@@ -304,8 +329,19 @@
     margin-top: 30px;
   }
 
+  .grop_list_item_link {
+    width: 70%;
+    box-shadow: 0px 10px 20px 0px #00000033;
+    background-color: #fff;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    text-decoration: none;
+    color: #000;
+  }
+
   .grop_list_item {
-    width: 48%;
+    width: 100%;
     padding-bottom: 20px;
     margin-bottom: 20px;
     overflow: hidden;
@@ -379,6 +415,17 @@
     font-weight: 500;
   }
 
+  .grop_list_item_link {
+    width: 70%;
+    box-shadow: 0px 10px 20px 0px #00000033;
+    background-color: #fff;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    text-decoration: none;
+    color: #000;
+  }
+
   .group_list_input {
     padding: 14px 20px;
     height: 22px;
@@ -395,7 +442,7 @@
   }
 
   .grop_list_item {
-    width: 90%;
+    width: 100%;
     padding-bottom: 20px;
     margin-bottom: 20px;
     overflow: hidden;
@@ -488,7 +535,7 @@
   }
 
   .grop_list_item {
-    width: 90%;
+    width: 100%;
     padding-bottom: 20px;
     margin-bottom: 20px;
     overflow: hidden;
@@ -550,6 +597,17 @@
 }
 
 @media (max-width: 395px) {
+
+  .grop_list_item_link {
+    width: 90%;
+    box-shadow: 0px 10px 20px 0px #00000033;
+    background-color: #fff;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    text-decoration: none;
+    color: #000;
+  }
   .group_list_header_paragraph {
     font-size: 22px;
     font-weight: 500;

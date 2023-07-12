@@ -1,0 +1,137 @@
+.group_info_wrapper {
+  display: flex;
+}
+
+/* .group_info {} */
+
+.group_info_left {
+  width: 40%;
+}
+
+.group_info_list_item {
+  width: 70%;
+  box-shadow: 0px 10px 20px 0px #00000033;
+  background-color: #fff;
+  border-radius: 8px;
+  padding-bottom: 40px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.group_info_paragraph {
+  font-size: 30px;
+  color: #2F49D1;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.group_info_list_card_paragraph {
+  background-color: #2F49D1;
+  color: #fff;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.group_info_list_card_top {
+  display: flex;
+  align-items: center;
+}
+
+.group_info_list_card_img {
+  margin-left: 20px;
+  margin-top: 20px;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+
+.group_info_list_card_span {
+  padding-right: 20px;
+}
+
+
+.group_info_list_card_top_item {
+  display: flex;
+}
+
+.group_info_list_card_top_item+.group_info_list_card_top_item {
+  margin-top: 7px;
+}
+
+.group_info_list_card_top_p {
+  margin-right: 10px;
+  color: #001062;
+}
+
+.group_info_list_card_bottom_item {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.group_info_list_card_bottom_p {
+  color: #001062;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.group_info_list_card_bottom_text {
+  font-size: 14px;
+}
+
+.gorup_info_left_paragraph {
+  font-size: 25px;
+  width: 300px;
+  margin-bottom: 20px;
+  color: #2F49D1;
+}
+
+/* .gorup_info_left_list {} */
+
+/* .gorup_info_left_item {} */
+.group_info_right {
+  width: 60%;
+}
+
+.group_info_right_item_extra {
+  background-color: #2F49D1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.group_info_right_box {
+  background-color: #fff;
+  box-shadow: 0px 10px 25px 0px #00000040;
+
+}
+
+.group_info_right_list {
+  list-style-type: none;
+}
+
+.group_info_right_item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.group_info_right_header_p {
+  color: #000000;
+  font-weight: 600;
+}
+
+.group_info_right_header_p_extra {
+  color: #fff;
+  font-weight: 600;
+}
+
+/* .group_info_right_img {} */

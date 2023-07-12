@@ -8,6 +8,7 @@ export const AddStudent = () => {
   const [parentName, setParentName] = useState("");
   const [parentNuber, setParentNumber] = useState("");
   const [img, setImg] = useState(null);
+  const [data, setData] = useState([]);
 
   //////////////////////////////////////////
 
@@ -49,6 +50,15 @@ export const AddStudent = () => {
         window.location.reload(true);
       });
   };
+
+  /////////////////////////////////////////////////
+
+  useEffect(() => {
+    fetch(`http://localhost:4001/get_groups`)
+      .then((res) => res.json())
+      .then((data1) => setData(data1))
+      .catch((err) => console.error(err));
+  }, []);
 
   return (
     <div className="student">
@@ -112,12 +122,15 @@ export const AddStudent = () => {
               onChange={(e) => setYonalish(e.target.value)}
               defaultValue=""
             >
-              <option value="ona-tili" className="student_option">
-                ona-tili
-              </option>
-              <option value="adabiyot" className="student_option">
-                adabiyot
-              </option>
+              {data.length &&
+                data.map((element, idx) => (
+                  <option
+                    value={element.GroupYonalish}
+                    className="student_option"
+                  >
+                    {element.GroupYonalish}
+                  </option>
+                ))}
             </select>
             <label htmlFor="rasm" className="student_label">
               Rasm 3x4

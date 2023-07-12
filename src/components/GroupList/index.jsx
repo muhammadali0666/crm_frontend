@@ -1,6 +1,7 @@
 import "./group.css";
 // import Avatar from "../../assets/user.png";
 import { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 
 export const GroupList = () => {
   const [data, setData] = useState([]);
@@ -46,7 +47,8 @@ export const GroupList = () => {
         {searchData.length !== 0
           ? searchData.map((element, idx) =>
               element.length !== 0 ? (
-                <li key={idx} className="grop_list_item">
+                <NavLink to={`/group_info/${element.id}`} className="grop_list_item_link">
+                  <li key={idx} className="grop_list_item">
                   <h4 className="grup_list_card_paragraph">
                     {element.GroupYonalish}
                   </h4>
@@ -102,11 +104,13 @@ export const GroupList = () => {
                     </li>
                   </ul>
                 </li>
+                </NavLink>
               ) : null
             )
           : data.length &&
             data.map((element, idx) => (
-              <li key={idx} className="grop_list_item">
+             <NavLink to={`/group_info/${element.id}`} className="grop_list_item_link">
+               <li key={idx} className="grop_list_item">
                 <h4 className="grup_list_card_paragraph">
                   {element.GroupYonalish}
                 </h4>
@@ -158,6 +162,7 @@ export const GroupList = () => {
                   </li>
                 </ul>
               </li>
+             </NavLink>
             ))}
       </ul>
     </div>

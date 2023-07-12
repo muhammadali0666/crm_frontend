@@ -15,7 +15,6 @@ export const AddGroup = () => {
     setRasm(event.target.files[0]);
   };
 
-  
   const formData = new FormData();
   formData.append("file", rasm);
   formData.append("upload_preset", "chatImages");
@@ -28,27 +27,30 @@ export const AddGroup = () => {
       body: formData,
     })
       .then((response) => response.json())
-      .then((data) => { console.log(data);{
-        fetch("http://localhost:4001/add_group", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            token: localStorage.getItem("token"),
-          },
-          body: JSON.stringify({
-            oqituvchiRasm: data.url,
-            GroupYonalish: fan,
-            DarsKunlari: kun,
-            DarsVaqti: vaqt,
-            Oqituvchi: ism,
-            OqituvchTelNomer: nomer,
-          }),
-        })
-          .then((res) => res.json())
-          .then((data) => alert(data.msg))
-          .catch((error) => console.log(error));
-        window.location.reload(true);
-      }});
+      .then((data) => {
+        console.log(data);
+        {
+          fetch("http://localhost:4001/add_group", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              token: localStorage.getItem("token"),
+            },
+            body: JSON.stringify({
+              oqituvchiRasm: data.url,
+              GroupYonalish: fan,
+              DarsKunlari: kun,
+              DarsVaqti: vaqt,
+              Oqituvchi: ism,
+              OqituvchTelNomer: nomer,
+            }),
+          })
+            .then((res) => res.json())
+            .then((data) => alert(data.msg))
+            .catch((error) => console.log(error));
+          window.location.reload(true);
+        }
+      });
   };
 
   return (
@@ -59,21 +61,14 @@ export const AddGroup = () => {
           <div className="group_form_box">
             <label htmlFor="ism" className="group_label">
               Guruh yo’nalishi
-              <select
-                className="group_select"
+              <input
+                type="text"
+                className="group_input"
+                placeholder="yangi guruh"
+                id="teacher"
+                value={fan}
                 onChange={(e) => setFan(e.target.value)}
-                defaultValue=""
-              >
-                <option value="ona-tili" className="group_option">
-                  ona-tili
-                </option>
-                <option value="adabiyot" className="group_option">
-                  adabiyot
-                </option>
-                <option value="english" className="group_option">
-                  english
-                </option>
-              </select>
+              />
             </label>
             <label htmlFor="teacher" className="group_label">
               O’qituvchi

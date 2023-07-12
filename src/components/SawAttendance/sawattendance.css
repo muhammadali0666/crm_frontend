@@ -1,8 +1,11 @@
-/* .attendance_list {} */
+.attendance_list {
+  width: 100%;
+}
 
 .attendance_list_header {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between !important;
+  align-items: center;
   margin-top: 50px;
 }
 
@@ -55,7 +58,10 @@
   align-items: center;
 }
 
-/* .attendance_list_card_img {} */
+.attendance_list_card_img {
+  border-radius: 50%;
+  margin: 20px;
+}
 
 .attendance_list_card_span {
   padding-right: 20px;
