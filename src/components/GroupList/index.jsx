@@ -26,7 +26,7 @@ export const GroupList = () => {
       .then((res) => res.json())
       .then((data) => setSearchData(data))
       .catch((err) => console.error(err));
-      search.value = ""
+    search.value = "";
   };
 
   return (
@@ -47,8 +47,76 @@ export const GroupList = () => {
         {searchData.length !== 0
           ? searchData.map((element, idx) =>
               element.length !== 0 ? (
-                <NavLink to={`/group_info/${element.id}`} className="grop_list_item_link">
+                <NavLink
+                  to={`/group_info/${element.id}`}
+                  className="grop_list_item_link"
+                >
                   <li key={idx} className="grop_list_item">
+                    <h4 className="grup_list_card_paragraph">
+                      {element.GroupYonalish}
+                    </h4>
+                    <div className="grup_list_card_top">
+                      <img
+                        src={element.oqituvchiRasm}
+                        alt="avatar"
+                        className="grup_list_card_img"
+                        width={80}
+                        height={80}
+                      />
+                      <span className="grup_list_card_span">
+                        <ul className="grup_list_card_top_list">
+                          <li className="grup_list_card_top_item">
+                            <p className="grup_list_card_top_p">O'qituvchi:</p>
+                            <p className="grup_list_card_top_text">
+                              {element.Oqituvchi}
+                            </p>
+                          </li>
+                          <li className="grup_list_card_top_item">
+                            <p className="grup_list_card_top_p">Tell raqam:</p>
+                            <p className="grup_list_card_top_text">
+                              {element.OqituvchTelNomer}
+                            </p>
+                          </li>
+                        </ul>
+                      </span>
+                    </div>
+                    <ul className="grup_list_card_bottom_list">
+                      <li className="grup_list_card_bottom_item">
+                        <p className="grup_list_card_bottom_p">Dars kunlari:</p>
+                        <p className="grup_list_card_bottom_text">
+                          {element.DarsKunlari}
+                        </p>
+                      </li>
+                      <li className="grup_list_card_bottom_item">
+                        <p className="grup_list_card_bottom_p">Dars vaqti:</p>
+                        <p className="grup_list_card_bottom_text">
+                          {element.DarsVaqti}
+                        </p>
+                      </li>
+                      <li className="grup_list_card_bottom_item">
+                        <p className="grup_list_card_bottom_p">
+                          O’quvchilar soni:
+                        </p>
+                        <p className="grup_list_card_bottom_text">25ta</p>
+                      </li>
+                      <li className="grup_list_card_bottom_item">
+                        <p className="grup_list_card_bottom_p">
+                          To’lov qilganlar:
+                        </p>
+                        <p className="grup_list_card_bottom_text">10ta</p>
+                      </li>
+                    </ul>
+                  </li>
+                </NavLink>
+              ) : null
+            )
+          : data.length &&
+            data.map((element, idx) => (
+              <NavLink
+                to={`/group_info/${element.id}`}
+                className="grop_list_item_link"
+              >
+                <li key={idx} className="grop_list_item">
                   <h4 className="grup_list_card_paragraph">
                     {element.GroupYonalish}
                   </h4>
@@ -104,65 +172,7 @@ export const GroupList = () => {
                     </li>
                   </ul>
                 </li>
-                </NavLink>
-              ) : null
-            )
-          : data.length &&
-            data.map((element, idx) => (
-             <NavLink to={`/group_info/${element.id}`} className="grop_list_item_link">
-               <li key={idx} className="grop_list_item">
-                <h4 className="grup_list_card_paragraph">
-                  {element.GroupYonalish}
-                </h4>
-                <div className="grup_list_card_top">
-                  <img
-                    src={element.oqituvchiRasm}
-                    alt="avatar"
-                    className="grup_list_card_img"
-                    width={80}
-                    height={80}
-                  />
-                  <span className="grup_list_card_span">
-                    <ul className="grup_list_card_top_list">
-                      <li className="grup_list_card_top_item">
-                        <p className="grup_list_card_top_p">O'qituvchi:</p>
-                        <p className="grup_list_card_top_text">
-                          {element.Oqituvchi}
-                        </p>
-                      </li>
-                      <li className="grup_list_card_top_item">
-                        <p className="grup_list_card_top_p">Tell raqam:</p>
-                        <p className="grup_list_card_top_text">
-                          {element.OqituvchTelNomer}
-                        </p>
-                      </li>
-                    </ul>
-                  </span>
-                </div>
-                <ul className="grup_list_card_bottom_list">
-                  <li className="grup_list_card_bottom_item">
-                    <p className="grup_list_card_bottom_p">Dars kunlari:</p>
-                    <p className="grup_list_card_bottom_text">
-                      {element.DarsKunlari}
-                    </p>
-                  </li>
-                  <li className="grup_list_card_bottom_item">
-                    <p className="grup_list_card_bottom_p">Dars vaqti:</p>
-                    <p className="grup_list_card_bottom_text">
-                      {element.DarsVaqti}
-                    </p>
-                  </li>
-                  <li className="grup_list_card_bottom_item">
-                    <p className="grup_list_card_bottom_p">O’quvchilar soni:</p>
-                    <p className="grup_list_card_bottom_text">25ta</p>
-                  </li>
-                  <li className="grup_list_card_bottom_item">
-                    <p className="grup_list_card_bottom_p">To’lov qilganlar:</p>
-                    <p className="grup_list_card_bottom_text">10ta</p>
-                  </li>
-                </ul>
-              </li>
-             </NavLink>
+              </NavLink>
             ))}
       </ul>
     </div>

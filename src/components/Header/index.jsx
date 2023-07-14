@@ -29,7 +29,7 @@ export const Header = (props) => {
         <p className="header_paragraph">{props.name}</p>
         <p className="header_date">{`${date}.${month}.${year}`}</p>
         <div className="header_box">
-          <select className="header_select">
+          <select className="header_select" disabled>
             <option value="uz" className="header_option">
               Uz
             </option>

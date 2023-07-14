@@ -2,19 +2,24 @@ import "./group_info_list.css";
 // import Avatar from "../../assets/avatar.png";
 import Done from "../../assets/done.png";
 import { useState, useEffect } from "react";
-import {useParams} from "react-router-dom"
+import { useParams } from "react-router-dom";
 
 export const GroupInfoList = () => {
-
   const { id } = useParams();
-  const [data, setData] = useState([]);
+  const [data, setData] = useState([])
+  const [data1, setData1] = useState([]);
 
   useEffect(() => {
-    fetch(
-      `http://localhost:4001/get_full_info_group/${id}`
-    )
+    fetch(`http://localhost:4001/get_full_info_group/${id}`)
       .then((res) => res.json())
       .then((data1) => setData(data1))
+      .catch((err) => console.log(err));
+  }, []);
+
+  useEffect(() => {
+    fetch(`http://localhost:4001/all_students_info_group/${id}`)
+      .then((res) => res.json())
+      .then((data) => setData1(data))
       .catch((err) => console.log(err));
   }, []);
 
@@ -27,7 +32,9 @@ export const GroupInfoList = () => {
             {data.length &&
               data.map((element, idx) => (
                 <div className="group_info_list_item" key={idx}>
-                  <h4 className="group_info_list_card_paragraph">english</h4>
+                  <h4 className="group_info_list_card_paragraph">
+                    {element.GroupYonalish}
+                  </h4>
                   <div className="group_info_list_card_top">
                     <img
                       src={element.oqituvchiRasm}
@@ -62,19 +69,23 @@ export const GroupInfoList = () => {
                       <p className="group_info_list_card_bottom_p">
                         Dars kunlari:
                       </p>
-                      <p className="group_info_list_card_bottom_text">{element.DarsKunlari}</p>
+                      <p className="group_info_list_card_bottom_text">
+                        {element.DarsKunlari}
+                      </p>
                     </li>
                     <li className="group_info_list_card_bottom_item">
                       <p className="group_info_list_card_bottom_p">
                         Dars vaqti:
                       </p>
-                      <p className="group_info_list_card_bottom_text">{element.DarsVaqti}</p>
+                      <p className="group_info_list_card_bottom_text">
+                        {element.DarsVaqti}
+                      </p>
                     </li>
                     <li className="group_info_list_card_bottom_item">
                       <p className="group_info_list_card_bottom_p">
                         O’quvchilar soni:
                       </p>
-                      <p className="group_info_list_card_bottom_text">25ta</p>
+                      <p className="group_info_list_card_bottom_text">{data1.length} ta</p>
                     </li>
                     <li className="group_info_list_card_bottom_item">
                       <p className="group_info_list_card_bottom_p">
@@ -108,47 +119,23 @@ export const GroupInfoList = () => {
                     To’lov
                   </p>
                 </li>
-                <li className="group_info_right_item ">
-                  <p className="group_info_right_header_p">1</p>
-                  <p className="group_info_right_header_p">ali aliyev</p>
-                  <img src={Done} alt="img" className="group_info_right_img" />
-                </li>
-                <hr />
-                <li className="group_info_right_item ">
-                  <p className="group_info_right_header_p">1</p>
-                  <p className="group_info_right_header_p">ali aliyev</p>
-                  <img src={Done} alt="img" className="group_info_right_img" />
-                </li>
-                <hr />
-                <li className="group_info_right_item ">
-                  <p className="group_info_right_header_p">1</p>
-                  <p className="group_info_right_header_p">ali aliyev</p>
-                  <img src={Done} alt="img" className="group_info_right_img" />
-                </li>
-                <hr />
-                <li className="group_info_right_item ">
-                  <p className="group_info_right_header_p">1</p>
-                  <p className="group_info_right_header_p">ali aliyev</p>
-                  <img src={Done} alt="img" className="group_info_right_img" />
-                </li>
-                <hr />
-                <li className="group_info_right_item ">
-                  <p className="group_info_right_header_p">1</p>
-                  <p className="group_info_right_header_p">ali aliyev</p>
-                  <img src={Done} alt="img" className="group_info_right_img" />
-                </li>
-                <hr />
-                <li className="group_info_right_item ">
-                  <p className="group_info_right_header_p">1</p>
-                  <p className="group_info_right_header_p">ali aliyev</p>
-                  <img src={Done} alt="img" className="group_info_right_img" />
-                </li>
-                <hr />
-                <li className="group_info_right_item ">
-                  <p className="group_info_right_header_p">1</p>
-                  <p className="group_info_right_header_p">ali aliyev</p>
-                  <img src={Done} alt="img" className="group_info_right_img" />
-                </li>
+                {data1.length &&
+                  data1.map((element, idx) => (
+                    <div key={idx}>
+                      <li className="group_info_right_item">
+                        <p className="group_info_right_header_p">{idx + 1}</p>
+                        <p className="group_info_right_header_p">
+                          {element.name}
+                        </p>
+                        <img
+                          src={Done}
+                          alt="img"
+                          className="group_info_right_img"
+                        />
+                      </li>
+                      <hr />
+                    </div>
+                  ))}
               </ul>
             </div>
           </div>

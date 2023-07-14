@@ -2,10 +2,14 @@ import "./apealtwolist.css";
 import Delete from "../../assets/delete.png";
 
 export const ApealTwoList = () => {
+
+  const nowDate = new Date()
+  
+
   return (
     <div className="apeal_list">
       <div className="apeal_list_header">
-        <h3 className="apeal_list_paragraph">26.03.2022 kungi murojatlar</h3>
+        <h3 className="apeal_list_paragraph">{nowDate.getDate()}.{nowDate.getMonth()+1}.{nowDate.getFullYear()} kungi murojatlar</h3>
         {/* <img src={Search} alt="serach" className="apeal_list_serch" width={24} height={24}/> */}
         <input
           type="text"
