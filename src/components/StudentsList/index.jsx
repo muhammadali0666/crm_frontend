@@ -94,7 +94,7 @@ export const StudentsList = () => {
                 studentData.map((element, idx) =>
                   element.length !== 0 ? (
                     <tr key={idx}>
-                      <th scope="col">{idx + 1}</th>
+                      <th className="th" scope="col">{idx + 1}</th>
                       <td>{element.name}</td>
                       <td>{element.phoneNumber}</td>
                       <td>{element.science}</td>

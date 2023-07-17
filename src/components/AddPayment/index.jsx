@@ -1,5 +1,5 @@
 import "./addpayment.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export const AddPayment = () => {
   const [oquvchiIsm, setOquvchiIsm] = useState("");
@@ -7,15 +7,23 @@ export const AddPayment = () => {
   const [yonalish, setYonalish] = useState("");
   const [tolovKun, setTolovKun] = useState("");
   const [nomer, setNomer] = useState("");
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetch(`http://localhost:4001/get_groups`)
+      .then((res) => res.json())
+      .then((data1) => setData(data1))
+      .catch((err) => console.error(err));
+  }, []);
 
   const handlePayment = () => {
     fetch(`http://localhost:4001/add_paymentor`, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        oquvchiIsmi: oqituvchiIsm,
+        oquvchiIsmi: oquvchiIsm,
         yonalish: yonalish,
         number: nomer,
         oqituvchiIsmi: oqituvchiIsm,
@@ -25,7 +33,7 @@ export const AddPayment = () => {
       .then((res) => res.json())
       .then((data) => console.log(data))
       .catch((error) => console.error(error));
-      window.location.reload()
+    window.location.reload();
   };
 
   return (
@@ -65,12 +73,12 @@ export const AddPayment = () => {
                 onChange={(e) => setYonalish(e.target.value)}
                 defaultValue=""
               >
-                <option value="dushanba" className="payment_option">
-                  matematika
-                </option>
-                <option value="seshanba" className="payment_option">
-                  fizika
-                </option>
+                {data.length &&
+                  data.map((element, idx) => (
+                    <option key={idx} value={element.GroupYonalish} className="payment_option">
+                      {element.GroupYonalish}
+                    </option>
+                  ))}
               </select>
             </label>
             <label htmlFor="date" className="payment_label">

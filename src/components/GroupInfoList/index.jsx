@@ -3,6 +3,7 @@ import "./group_info_list.css";
 import Done from "../../assets/done.png";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import UnPayed from "../../assets/unpayed.png"
 
 export const GroupInfoList = () => {
   const { id } = useParams();
@@ -128,7 +129,7 @@ export const GroupInfoList = () => {
                           {element.name}
                         </p>
                         <img
-                          src={Done}
+                          src={element.pay === true ? Done : UnPayed}
                           alt="img"
                           className="group_info_right_img"
                         />
