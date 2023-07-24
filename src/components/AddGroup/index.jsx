@@ -75,7 +75,7 @@ export const AddGroup = () => {
               <input
                 type="text"
                 className="group_input"
-                placeholder="Muhammadali Shuhratjonov"
+                placeholder="O'qituvchi ismi"
                 id="teacher"
                 value={ism}
                 onChange={(e) => setIsm(e.target.value)}

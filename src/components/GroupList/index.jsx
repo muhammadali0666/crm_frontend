@@ -93,18 +93,6 @@ export const GroupList = () => {
                           {element.DarsVaqti}
                         </p>
                       </li>
-                      <li className="grup_list_card_bottom_item">
-                        <p className="grup_list_card_bottom_p">
-                          O’quvchilar soni:
-                        </p>
-                        <p className="grup_list_card_bottom_text">25ta</p>
-                      </li>
-                      <li className="grup_list_card_bottom_item">
-                        <p className="grup_list_card_bottom_p">
-                          To’lov qilganlar:
-                        </p>
-                        <p className="grup_list_card_bottom_text">10ta</p>
-                      </li>
                     </ul>
                   </li>
                 </NavLink>
@@ -157,18 +145,6 @@ export const GroupList = () => {
                       <p className="grup_list_card_bottom_text">
                         {element.DarsVaqti}
                       </p>
-                    </li>
-                    <li className="grup_list_card_bottom_item">
-                      <p className="grup_list_card_bottom_p">
-                        O’quvchilar soni:
-                      </p>
-                      <p className="grup_list_card_bottom_text">25ta</p>
-                    </li>
-                    <li className="grup_list_card_bottom_item">
-                      <p className="grup_list_card_bottom_p">
-                        To’lov qilganlar:
-                      </p>
-                      <p className="grup_list_card_bottom_text">10ta</p>
                     </li>
                   </ul>
                 </li>

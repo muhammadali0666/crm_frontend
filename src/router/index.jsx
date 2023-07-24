@@ -9,6 +9,7 @@ import { Attendance } from "../pages/Attendance";
 import { Apeal } from "../pages/Appeal/inde";
 import { NotFound } from "../pages/NotFound";
 import {GuruhInfo} from "../pages/GuruhInfo"
+import { InfoDavomat } from "../pages/InfoDavomat";
 
 export const RouteWrapper = () => {
 
@@ -23,6 +24,7 @@ export const RouteWrapper = () => {
       <Route path="/davomat" element={<Attendance />} />
       <Route path="/apeal" element={<Apeal />} />
       <Route path="/group_info/:id" element={<GuruhInfo/>}/>
+      <Route path="/davomat_info/:id" element={<InfoDavomat/>}/>
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

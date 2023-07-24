@@ -1,11 +1,11 @@
-import "./group_info_list.css";
+import "./davomat.css";
 // import Avatar from "../../assets/avatar.png";
 import Done from "../../assets/done.png";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import UnPayed from "../../assets/close.png";
 
-export const GroupInfoList = () => {
+export const DavomatInfo = () => {
   const { id } = useParams();
   const [data, setData] = useState([]);
   const [data1, setData1] = useState([]);
@@ -25,17 +25,19 @@ export const GroupInfoList = () => {
       .catch((err) => console.log(err));
   }, []);
 
+  console.log(arr.length);
+
   return (
     <div className="group_info">
-     <span className="span">
-     {data1.length &&
-        data1.map(
-          (element, idx) =>
-            element.pay === true && (
-              <p style={{ display: "none" }}>{arr.push(idx + 1)}</p>
-            ) && <p>{arr.length}</p>
-        )}
-     </span>
+      <span className="span">
+        {data1.length &&
+          data1.map(
+            (element, idx) =>
+              element.pay === true && (
+                <p style={{ display: "none" }}>{arr.push(idx + 1)}</p>
+              ) && <p>{arr.length}</p>
+          )}
+      </span>
       <div className="group_info_inner">
         <h2 className="group_info_paragraph">Informatika guruhi ro’yhati</h2>
         <div className="group_info_wrapper">
@@ -110,7 +112,7 @@ export const GroupInfoList = () => {
                 </div>
               ))}
             <h4 className="gorup_info_left_paragraph">
-              Shu oy bo’yicha to’lov qilmaganlar
+            Darsga kelmaganlar
             </h4>
             <ul className="gorup_info_left_list">
               {data1.length &&

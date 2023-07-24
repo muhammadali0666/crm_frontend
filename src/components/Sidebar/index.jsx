@@ -145,6 +145,9 @@ export const Sidebar = () => {
               </NavLink>
             </li>
           </ul>
+          <p className="sidebar_info_text">
+            POWERED BY MUHAMMADALI
+          </p>
         </div>
       </div>
     </>

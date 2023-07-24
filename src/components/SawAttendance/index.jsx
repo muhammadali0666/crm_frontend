@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import "./sawattendance.css";
 // import Avatar from "../../assets/avatar.png";
 import { useState, useEffect } from "react";
@@ -48,7 +49,8 @@ export const AttendanceList = () => {
         {searchData.length !== 0
           ? searchData.map((element, idx) =>
               element.length !== 0 ? (
-                <li className="attendance_list_item" key={idx}>
+              <NavLink to={`/davomat_info/${element.id}`} className='attendace_list_link'>
+                  <li className="attendance_list_item" key={idx}>
                   <h4 className="attendance_list_card_paragraph">
                     {element.GroupYonalish}
                   </h4>
@@ -98,26 +100,16 @@ export const AttendanceList = () => {
                         {element.DarsVaqti}
                       </p>
                     </li>
-                    <li className="attendance_list_card_bottom_item">
-                      <p className="attendance_list_card_bottom_p">
-                        O’quvchilar soni:
-                      </p>
-                      <p className="attendance_list_card_bottom_text">25ta</p>
-                    </li>
-                    <li className="attendance_list_card_bottom_item">
-                      <p className="attendance_list_card_bottom_p">
-                        To’lov qilganlar:
-                      </p>
-                      <p className="attendance_list_card_bottom_text">10ta</p>
-                    </li>
                   </ul>
                 </li>
+              </NavLink>
               ) : null
             )
           : data.length &&
             data.map((element, idx) =>
               element.length !== 0 ? (
-                <li className="attendance_list_item" key={idx}>
+                <NavLink to={`/davomat_info/${element.id}`} className='attendace_list_link'>
+                  <li className="attendance_list_item" key={idx}>
                   <h4 className="attendance_list_card_paragraph">
                     {element.GroupYonalish}
                   </h4>
@@ -167,20 +159,9 @@ export const AttendanceList = () => {
                         {element.DarsVaqti}
                       </p>
                     </li>
-                    <li className="attendance_list_card_bottom_item">
-                      <p className="attendance_list_card_bottom_p">
-                        O’quvchilar soni:
-                      </p>
-                      <p className="attendance_list_card_bottom_text">25ta</p>
-                    </li>
-                    <li className="attendance_list_card_bottom_item">
-                      <p className="attendance_list_card_bottom_p">
-                        To’lov qilganlar:
-                      </p>
-                      <p className="attendance_list_card_bottom_text">10ta</p>
-                    </li>
                   </ul>
                 </li>
+                </NavLink>
               ) : null
             )}
       </ul>

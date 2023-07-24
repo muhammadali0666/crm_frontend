@@ -1,4 +1,6 @@
-/* .group_list {} */
+.group_list {
+  padding-bottom: 300px;
+}
 
 .grop_list_item_link {
   width: 30%;

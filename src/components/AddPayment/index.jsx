@@ -47,7 +47,7 @@ export const AddPayment = () => {
               <input
                 type="text"
                 className="payment_input"
-                placeholder="Muhammadali Shuhratjonov"
+                placeholder="O’quvchi ismi"
                 id="ism"
                 value={oquvchiIsm}
                 onChange={(e) => setOquvchiIsm(e.target.value)}
@@ -58,7 +58,7 @@ export const AddPayment = () => {
               <input
                 type="text"
                 className="payment_input"
-                placeholder="Muhammadali Shuhratjonov"
+                placeholder="O’qituvchi ismi"
                 id="teacher"
                 value={oqituvchiIsm}
                 onChange={(e) => setOqituvchiIsm(e.target.value)}

@@ -2,6 +2,7 @@
   height: 100%;
   background-color: #2F49D1;
   width: 253px;
+  position: relative;
 }
 
 .actives {
@@ -11,7 +12,7 @@
   border-right: 4px solid #fff;
   display: flex;
   align-items: center;
-  transform: scale(1.2);
+  transform: scale(1.19);
   box-shadow: 2px 6px 22px 0px rgba(0, 0, 0, 0.36);
 }
 
@@ -82,6 +83,14 @@ label #cancel {
   font-size: 20px;
   color: #ffffff;
   margin-left: 20px;
+}
+
+.sidebar_info_text {
+  font-size: 14px;
+  color: #ffffff;
+  font-weight: 400;
+  position: absolute;
+  bottom: 30px;
 }
 
 @media (max-width: 1130px) {

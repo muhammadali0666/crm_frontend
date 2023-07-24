@@ -72,7 +72,7 @@ export const AddStudent = () => {
             <input
               type="text"
               className="student_input"
-              placeholder="Muhammadali Shuhratjonov"
+              placeholder="Ism Familiya"
               id="ism"
               value={name}
               onChange={(e) => setName(e.target.value)}

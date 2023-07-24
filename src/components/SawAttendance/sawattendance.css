@@ -1,5 +1,11 @@
 .attendance_list {
   width: 100%;
+  padding-bottom: 220px;
+}
+
+.attendace_list_link {
+  width: 35%;
+  color: #000;
 }
 
 .attendance_list_header {
@@ -34,7 +40,7 @@
 }
 
 .attendance_list_item {
-  width: 30%;
+  width: 100%;
   box-shadow: 0px 10px 20px 0px #00000033;
   background-color: #fff;
   border-radius: 8px;
@@ -132,8 +138,13 @@
     margin-top: 30px;
   }
 
-  .attendance_list_item {
+  .attendace_list_link {
     width: 42%;
+    color: #000;
+  }
+
+  .attendance_list_item {
+    width: 100%;
     border-radius: 8px;
     padding-bottom: 40px;
     margin-bottom: 20px;
@@ -219,7 +230,7 @@
   }
 
   .attendance_list_item {
-    width: 42%;
+    width: 100%;
     border-radius: 8px;
     padding-bottom: 40px;
     margin-bottom: 20px;
@@ -304,11 +315,16 @@
     margin-top: 30px;
   }
 
-  .attendance_list_item {
+  .attendace_list_link {
     width: 90%;
+    color: #000;
+  }
+
+  .attendance_list_item {
+    width: 100%;
     border-radius: 8px;
     padding-bottom: 40px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     overflow: hidden;
   }
 
@@ -396,11 +412,14 @@
   }
 
   .attendance_list_item {
-    width: 90%;
+    width: 100%;
     border-radius: 8px;
     padding-bottom: 40px;
     margin-bottom: 20px;
     overflow: hidden;
+    padding: 0px;
+    margin: 0px;
+    margin-bottom: 20px;
   }
 
   .attendance_list_card_paragraph {
@@ -487,7 +506,7 @@
   }
 
   .attendance_list_item {
-    width: 90%;
+    width: 100%;
     border-radius: 8px;
     padding-bottom: 40px;
     margin-bottom: 20px;
