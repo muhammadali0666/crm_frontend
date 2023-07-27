@@ -10,11 +10,27 @@
   box-shadow: 0px 10px 25px 0px #00000040;
   background-color: #fff;
   padding-bottom: 100px;
+  border-collapse: collapse;
 }
-
+tr {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
 table {
   width: 100%;
+  border-collapse: collapse;
 }
+td, tr, th {
+  border: #0061F7 1px solid;
+  border-collapse: collapse !important;
+  text-align: center;
+}
+td, th {
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 
 thead {
   background-color: #2F49D1;
@@ -22,27 +38,29 @@ thead {
 
 thead tr {
   color: #fff;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
-thead tr th {
+/* thead tr th {
   padding: 10px;
-}
+} */
 
 tbody tr {
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
 }
 
-tr {
+/* tr {
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
   margin-bottom: 10px;
-}
+} */
 
-.tbody {
+/* .tbody {
   padding: 10px !important;
-}
+} */
 
 .student_list_header {
   display: flex;
@@ -76,47 +94,47 @@ tr {
   .student_list {
     margin-bottom: 70px;
   }
-  
+
   .student_list_box {
     padding-bottom: 100px;
   }
-  
+
   table {
     width: 100%;
   }
-  
+
   thead tr th {
     padding: 10px;
   }
-  
+
   tbody tr {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
   }
-  
+/* 
   tr {
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
     margin-bottom: 10px;
     font-size: 14px;
-  }
-  
+  } */
+
   .tbody {
-    padding: 10px !important;
+    padding: 0px !important;
   }
-  
+
   .student_list_header {
     display: flex;
     justify-content: space-between;
     margin-top: 50px;
     margin-bottom: 20px;
   }
-  
+
   .student_list_paragraph {
     font-size: 30px;
   }
-  
+
   .student_list_input {
     padding: 14px 16px;
     height: 26px;
@@ -130,49 +148,49 @@ tr {
     margin-bottom: 70px;
     overflow-x: scroll !important;
   }
-  
+
   .student_list_box {
     width: 850px !important;
     padding-bottom: 60px;
     overflow: auto;
   }
-  
+
   table {
     width: 100%;
   }
-  
+
   thead tr th {
-    padding: 10px;
+    padding: 0px !important;
   }
-  
-  tbody tr {
+
+  /* tbody tr {
     padding-left: 10px;
     padding-right: 10px;
-  }
-  
-  tr {
+  } */
+
+  /* tr {
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
     margin-bottom: 10px;
     font-size: 14px;
-  }
-  
-  .tbody {
+  } */
+
+  /* .tbody {
     padding: 10px !important;
-  }
-  
+  } */
+
   .student_list_header {
     display: flex;
     justify-content: space-between;
     margin-top: 50px;
     margin-bottom: 20px;
   }
-  
+
   .student_list_paragraph {
     font-size: 30px;
   }
-  
+
   .student_list_input {
     padding: 14px 16px;
     height: 26px;
@@ -180,54 +198,55 @@ tr {
     font-size: 14px;
   }
 }
+
 @media (max-width: 550px) {
   .student_list {
     margin-bottom: 70px;
     overflow-x: scroll !important;
   }
-  
+
   .student_list_box {
     width: 850px !important;
     padding-bottom: 60px;
     overflow: auto;
   }
-  
+
   table {
     width: 100%;
   }
-  
+
   thead tr th {
     padding: 10px;
   }
-  
-  tbody tr {
+
+  /* tbody tr {
     padding-left: 10px;
     padding-right: 10px;
-  }
-  
-  tr {
+  } */
+
+  /* tr {
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
     margin-bottom: 10px;
     font-size: 14px;
-  }
-  
-  .tbody {
+  } */
+
+  /* .tbody {
     padding: 10px !important;
-  }
-  
+  } */
+
   .student_list_header {
     display: flex;
     justify-content: space-between;
     margin-top: 50px;
     margin-bottom: 20px;
   }
-  
+
   .student_list_paragraph {
     font-size: 26px;
   }
-  
+
   .student_list_input {
     padding: 14px 10px;
     height: 26px;
@@ -241,49 +260,49 @@ tr {
     margin-bottom: 70px;
     overflow-x: scroll !important;
   }
-  
+
   .student_list_box {
     width: 850px !important;
     padding-bottom: 60px;
     overflow: auto;
   }
-  
+
   table {
     width: 100%;
   }
-  
+
   thead tr th {
     padding: 10px;
   }
-  
-  tbody tr {
+
+  /* tbody tr {
     padding-left: 10px;
     padding-right: 10px;
-  }
-  
-  tr {
+  } */
+
+  /* tr {
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
     margin-bottom: 10px;
     font-size: 14px;
-  }
-  
+  } */
+/* 
   .tbody {
     padding: 10px !important;
-  }
-  
+  } */
+
   .student_list_header {
     display: flex;
     justify-content: space-between;
     margin-top: 50px;
     margin-bottom: 20px;
   }
-  
+
   .student_list_paragraph {
     font-size: 22px;
   }
-  
+
   .student_list_input {
     width: 150px;
     padding: 14px 10px;

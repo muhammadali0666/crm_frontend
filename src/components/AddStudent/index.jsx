@@ -127,6 +127,7 @@ export const AddStudent = () => {
                   <option
                     value={element.GroupYonalish}
                     className="student_option"
+                    key={idx}
                   >
                     {element.GroupYonalish}
                   </option>
