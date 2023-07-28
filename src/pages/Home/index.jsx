@@ -3,10 +3,15 @@ import { Header } from "../../components/Header";
 import { Sidebar } from "../../components/Sidebar";
 import { Card } from "../../components/Card";
 import { BarChart } from "../../components/BarChart.js";
-import { useState } from "react";
-import { Data } from "../../data";
+import { useState, useEffect } from "react";
+import { Data } from "../../Data";
 
 export const Home = () => {
+  ////////////////////////////////////////
+
+
+
+  ////////////////////////////////////////
   const [userData, setUserData] = useState({
     labels: Data.map((data) => data.month),
     datasets: [

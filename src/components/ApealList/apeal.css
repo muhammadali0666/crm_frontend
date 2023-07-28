@@ -64,9 +64,26 @@ tr {
 }
 
 .long_text {
-  width: 50%;
+  border: none;
+  text-align: start;
+  padding-left: 20px;
 }
 
+.appeal_tr {
+border: none;
+}
+.appeal_th {
+  width: 30%;
+  border: none;
+}
+.appeal_td {
+  width: 30%;
+  border: none;
+}
+.appeal_one {
+  border: none;
+  width: 10%;
+}
 
 /* .table_img {} */
 

@@ -17,24 +17,24 @@ export const ApealList = () => {
         <table className="table">
           <thead>
             <tr>
-              <th scope="col">№</th>
-              <th scope="col">O’quvchi ismi</th>
-              <th scope="col">Telefon nomer</th>
+              <th scope="col" className="appeal_one">№</th>
+              <th scope="col" className="thead_th">O’quvchi ismi</th>
+              <th scope="col" className="thead_th">Telefon nomer</th>
               <th className="long_text" scope="col">Izoh</th>
-              <th scope="col">#</th>
+              <th scope="col" className="appeal_one">#</th>
             </tr>
           </thead>
           <tbody className="tbody">
-            <tr>
-              <th scope="col">1</th>
-              <td>Muhammad Aliyev</td>
-              <td>+998904565025</td>
+            <tr className="appeal_tr">
+              <th className="appeal_one" scope="col">1</th>
+              <td className="appeal_td">Muhammad Aliyev</td>
+              <td className="appeal_td">+998904565025</td>
               <td className="long_text">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Bibendum nascetur faucibus quam nunc mattis. Etiam ultrices vel
                 nisl nisl nec sed.{" "}
               </td>
-              <td>
+              <td className="appeal_one">
                 <img
                   src={Delete}
                   alt="delete"
@@ -45,16 +45,16 @@ export const ApealList = () => {
               </td>
             </tr>
             <hr />
-            <tr>
-              <th scope="col">1</th>
-              <td>Muhammad Aliyev</td>
-              <td>+998904565025</td>
+            <tr className="appeal_tr">
+              <th className="appeal_one" scope="col">1</th>
+              <td className="appeal_td">Muhammad Aliyev</td>
+              <td className="appeal_td">+998904565025</td>
               <td className="long_text">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Bibendum nascetur faucibus quam nunc mattis. Etiam ultrices vel
                 nisl nisl nec sed.{" "}
               </td>
-              <td>
+              <td className="appeal_one">
                 <img
                   src={Delete}
                   alt="delete"
@@ -65,16 +65,16 @@ export const ApealList = () => {
               </td>
             </tr>
             <hr />
-            <tr>
-              <th scope="col">1</th>
-              <td>Muhammad Aliyev</td>
-              <td>+998904565025</td>
+            <tr className="appeal_tr">
+              <th className="appeal_one" scope="col">1</th>
+              <td className="appeal_td">Muhammad Aliyev</td>
+              <td className="appeal_td">+998904565025</td>
               <td className="long_text">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Bibendum nascetur faucibus quam nunc mattis. Etiam ultrices vel
                 nisl nisl nec sed.{" "}
               </td>
-              <td>
+              <td className="appeal_one">
                 <img
                   src={Delete}
                   alt="delete"

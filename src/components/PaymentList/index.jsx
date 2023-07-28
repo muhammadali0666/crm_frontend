@@ -65,7 +65,7 @@ export const PaymentsList = () => {
                       <td>{element.oquvchiIsmi}</td>
                       <td>{element.number}</td>
                       <td>{element.yonalish}</td>
-                      <td>{element.oqituvchiIsm}</td>
+                      <td>{element.oqituvchiIsmi}</td>
                       <td>{element.tolovKuni}</td>
                       <td>
                         <img
@@ -87,7 +87,7 @@ export const PaymentsList = () => {
                       <td>{element.oquvchiIsmi}</td>
                       <td>{element.number}</td>
                       <td>{element.yonalish}</td>
-                      <td>{element.oqituvchiIsm}</td>
+                      <td>{element.oqituvchiIsmi}</td>
                       <td>{element.tolovKuni}</td>
                       <td>
                         <img

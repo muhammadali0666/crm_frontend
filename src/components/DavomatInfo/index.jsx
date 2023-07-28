@@ -39,7 +39,11 @@ export const DavomatInfo = () => {
           )}
       </span>
       <div className="group_info_inner">
-        <h2 className="group_info_paragraph">Informatika guruhi ro’yhati</h2>
+        <h2 className="group_info_paragraph" style={{ display: "flex" }}>
+          {data.length &&
+            data.map((element) => <p>{element.GroupYonalish} </p>)}{" "}
+          -guruhi ro’yhati
+        </h2>
         <div className="group_info_wrapper">
           <div className="group_info_left">
             {data.length &&
@@ -111,10 +115,8 @@ export const DavomatInfo = () => {
                   </ul>
                 </div>
               ))}
-            <h4 className="gorup_info_left_paragraph">
-            Darsga kelmaganlar
-            </h4>
-            <ul className="gorup_info_left_list">
+            <h4 className="gorup_info_left_paragraph">Darsga kelmaganlar</h4>
+            {/* <ul className="gorup_info_left_list">
               {data1.length &&
                 data1.map(
                   (element, idx) =>
@@ -127,7 +129,7 @@ export const DavomatInfo = () => {
                       </li>
                     )
                 )}
-            </ul>
+            </ul> */}
           </div>
           <div className="group_info_right">
             <div className="group_info_right_box">
@@ -139,9 +141,9 @@ export const DavomatInfo = () => {
                   <p className="group_info_right_header_p group_info_right_header_p_extra">
                     O’quvchi ismi
                   </p>
-                  <p className="group_info_right_header_p group_info_right_header_p_extra">
-                    To’lov
-                  </p>
+                  {/* <p className="group_info_right_header_p group_info_right_header_p_extra">
+                    Davomat
+                  </p> */}
                 </li>
                 {data1.length &&
                   data1.map((element, idx) => (
@@ -151,13 +153,13 @@ export const DavomatInfo = () => {
                         <p className="group_info_right_header_p">
                           {element.name}
                         </p>
-                        <img
+                        {/* <img
                           src={element.pay === true ? Done : UnPayed}
                           alt="img"
                           className="group_info_right_img"
                           width={30}
                           height={30}
-                        />
+                        /> */}
                       </li>
                       <hr />
                     </div>

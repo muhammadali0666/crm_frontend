@@ -16,11 +16,14 @@ tr {
   margin-top: 0 !important;
   margin-bottom: 0 !important;
 }
+.thead_th {
+  width: 30%;
+}
 table {
   width: 100%;
   border-collapse: collapse;
 }
-td, tr, th {
+td, th {
   border: #0061F7 1px solid;
   border-collapse: collapse !important;
   text-align: center;
