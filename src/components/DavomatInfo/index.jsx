@@ -25,8 +25,6 @@ export const DavomatInfo = () => {
       .catch((err) => console.log(err));
   }, []);
 
-  console.log(arr.length);
-
   return (
     <div className="group_info">
       <span className="span">

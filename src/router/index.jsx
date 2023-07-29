@@ -10,6 +10,9 @@ import { Apeal } from "../pages/Appeal/inde";
 import { NotFound } from "../pages/NotFound";
 import {GuruhInfo} from "../pages/GuruhInfo"
 import { InfoDavomat } from "../pages/InfoDavomat";
+import { AllStudentsList } from "../pages/AllStudentsList";
+import { AllTeachersList } from "../pages/AllTeachersList";
+import { AllDeletedList } from "../pages/DeletedStudentsList";
 
 export const RouteWrapper = () => {
 
@@ -25,6 +28,9 @@ export const RouteWrapper = () => {
       <Route path="/apeal" element={<Apeal />} />
       <Route path="/group_info/:id" element={<GuruhInfo/>}/>
       <Route path="/davomat_info/:id" element={<InfoDavomat/>}/>
+      <Route path="/all_students" element={<AllStudentsList/>}/>
+      <Route path="/all_teachers" element={<AllTeachersList/>}/>
+      <Route path="/all_deleted_students" element={<AllDeletedList/>}/>
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

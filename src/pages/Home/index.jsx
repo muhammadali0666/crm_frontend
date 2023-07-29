@@ -7,17 +7,13 @@ import { useState, useEffect } from "react";
 import { Data } from "../../Data";
 
 export const Home = () => {
-  ////////////////////////////////////////
 
-
-
-  ////////////////////////////////////////
   const [userData, setUserData] = useState({
     labels: Data.map((data) => data.month),
     datasets: [
       {
         label: "students",
-        data: Data.map((chain) => chain.students),
+        data: Data.map((chain) => chain.id),
         backgroundColor: [
           "#2F49D1",
           "#E13468"
@@ -37,7 +33,7 @@ export const Home = () => {
             <Header name="Xisobot"/>
             <div className="home_right_box_inner">
               <Card/>
-              <BarChart chartData={userData} />
+              {/* <BarChart chartData={userData} /> */}
             </div>
           </div>
         </div>

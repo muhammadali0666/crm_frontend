@@ -28,7 +28,6 @@ export const AddGroup = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         {
           fetch("http://localhost:4001/add_group", {
             method: "POST",

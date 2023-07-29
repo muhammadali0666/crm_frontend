@@ -1,6 +1,7 @@
 import "./card.css";
 import Icon from "../../assets/icon.png";
 import { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 
 export const Card = () => {
 
@@ -38,7 +39,7 @@ export const Card = () => {
   return (
     <div className="card_wrapper">
       <div className="card_wrapper_inner">
-        <div className="card">
+        <NavLink to='/all_students' className="card">
           <div className="card_one">
             <h3 className="card_paragraph">Jami o’quvchilar soni:</h3>
             <p className="card_text">{studentData.length} ta</p>
@@ -52,8 +53,8 @@ export const Card = () => {
               height={100}
             />
           </div>
-        </div>
-        <div className="card1 card">
+        </NavLink>
+        <NavLink to='/all_teachers' className="card1 card">
           <div className="card_one">
             <h3 className="card_paragraph">O’qituvchilar soni:</h3>
             <p className="card_text">{teacherData.length} ta</p>
@@ -67,10 +68,10 @@ export const Card = () => {
               height={100}
             />
           </div>
-        </div>
+        </NavLink>
       </div>
       <div className="card_wrapper_inner">
-        <div className="card">
+        <NavLink to='/all_deleted_students' className="card">
           <div className="card_one">
             <h3 className="card_paragraph">tark etganlar:</h3>
             <p className="card_text">{deletedStudents.length} ta</p>
@@ -84,7 +85,7 @@ export const Card = () => {
               height={100}
             />
           </div>
-        </div>
+        </NavLink>
         <div className="card1 card">
           <div className="card_one">
             <h3 className="card_paragraph">Jami guruhlar soni</h3>

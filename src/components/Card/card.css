@@ -6,6 +6,7 @@
   box-shadow: 2px 6px 22px 0px rgba(0, 0, 0, 0.36);
   display: flex;
   justify-content: space-between;
+  color: #000;
 }
 
 .card_paragraph {
