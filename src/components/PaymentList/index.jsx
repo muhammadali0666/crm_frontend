@@ -7,7 +7,13 @@ export const PaymentsList = () => {
   const [searchPaymentors, setSearchPaymentors] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:4001/get_paymentors`)
+    fetch(`http://localhost:4001/get_paymentors`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        token: localStorage.getItem("token"),
+      },
+    })
       .then((res) => res.json())
       .then((data) => setMyData(data))
       .catch((err) => console.error(err));
@@ -20,7 +26,10 @@ export const PaymentsList = () => {
     let { search } = e.target;
     fetch(`http://localhost:4001/search_paymentors`, {
       method: "GET",
-      headers: { search: search.value },
+      headers: { 
+        search: search.value,
+        token: localStorage.getItem("token")
+       },
     })
       .then((res) => res.json())
       .then((data) => setSearchPaymentors(data))

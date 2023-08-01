@@ -8,7 +8,13 @@ export const GroupList = () => {
   const [searchData, setSearchData] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:4001/get_groups")
+    fetch("http://localhost:4001/get_groups", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        token: localStorage.getItem("token"),
+      },
+    })
       .then((res) => res.json())
       .then((data) => setData(data))
       .catch((err) => console.log(err));
@@ -21,7 +27,11 @@ export const GroupList = () => {
     let { search } = e.target;
     fetch(`http://localhost:4001/search_groups`, {
       method: "GET",
-      headers: { search: search.value },
+      headers: { 
+        search: search.value,
+        "Content-Type": "application/json",
+        token: localStorage.getItem("token")
+       },
     })
       .then((res) => res.json())
       .then((data) => setSearchData(data))

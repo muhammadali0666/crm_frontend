@@ -11,27 +11,51 @@ export const Card = () => {
   const [deletedStudents, setDeletedStudents] = useState([]);
 ///////////////////////////
   useEffect(() => {
-    fetch("http://localhost:4001/get_deleted")
+    fetch("http://localhost:4001/get_deleted", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        token: localStorage.getItem("token"),
+      },
+    })
       .then((res) => res.json())
       .then((data) => setDeletedStudents(data))
       .catch((err) => console.log(err));
   }, []);
 ///////////////////////////////////////
   useEffect(() => {
-    fetch("http://localhost:4001/get_groups")
+    fetch("http://localhost:4001/get_groups", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        token: localStorage.getItem("token"),
+      },
+    })
       .then((res) => res.json())
       .then((data) => setGroups(data))
       .catch((err) => console.log(err));
   }, []);
 ///////////////////////////////////////
   useEffect(() => {
-    fetch("http://localhost:4001/get_students")
+    fetch("http://localhost:4001/get_students", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        token: localStorage.getItem("token"),
+      }
+    })
       .then((res) => res.json())
       .then((data) => setStudentData(data));
   }, []);
 ////////////////////////////////
   useEffect(() => {
-    fetch("http://localhost:4001/get_teacher")
+    fetch("http://localhost:4001/get_teacher", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        token: localStorage.getItem("token"),
+      },
+    })
       .then((res) => res.json())
       .then((data) => setTeacherData(data));
   }, []);

@@ -54,7 +54,13 @@ export const AddStudent = () => {
   /////////////////////////////////////////////////
 
   useEffect(() => {
-    fetch(`http://localhost:4001/get_groups`)
+    fetch(`http://localhost:4001/get_groups`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        token: localStorage.getItem("token"),
+      },
+    })
       .then((res) => res.json())
       .then((data1) => setData(data1))
       .catch((err) => console.error(err));

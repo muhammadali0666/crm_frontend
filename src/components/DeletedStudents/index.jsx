@@ -5,7 +5,13 @@ export const AllDeletedStudents = () => {
   const [deletedStudents, setDeletedStudents] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:4001/get_deleted")
+    fetch("http://localhost:4001/get_deleted", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        token: localStorage.getItem("token"),
+      },
+    })
       .then((res) => res.json())
       .then((data) => setDeletedStudents(data))
       .catch((err) => console.log(err));

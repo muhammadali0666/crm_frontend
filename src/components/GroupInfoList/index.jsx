@@ -12,14 +12,26 @@ export const GroupInfoList = () => {
   const arr = [];
 
   useEffect(() => {
-    fetch(`http://localhost:4001/get_full_info_group/${id}`)
+    fetch(`http://localhost:4001/get_full_info_group/${id}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        token: localStorage.getItem("token"),
+      },
+    })
       .then((res) => res.json())
       .then((data1) => setData(data1))
       .catch((err) => console.log(err));
   }, []);
 
   useEffect(() => {
-    fetch(`http://localhost:4001/all_students_info_group/${id}`)
+    fetch(`http://localhost:4001/all_students_info_group/${id}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        token: localStorage.getItem("token"),
+      },
+    })
       .then((res) => res.json())
       .then((data) => setData1(data))
       .catch((err) => console.log(err));

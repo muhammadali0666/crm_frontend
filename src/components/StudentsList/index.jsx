@@ -8,7 +8,13 @@ export const StudentsList = () => {
 
 
   useEffect(() => {
-    fetch("http://localhost:4001/get_students")
+    fetch("http://localhost:4001/get_students", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        token: localStorage.getItem("token"),
+      },
+    })
       .then((res) => res.json())
       .then((data) => setStudentData(data));
   }, []);
@@ -16,6 +22,10 @@ export const StudentsList = () => {
   const handleDelete = (e) => {
     fetch(`http://localhost:4001/student_remove/${e}`, {
       method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        token: localStorage.getItem("token"),
+      },
     })
       .then((res) => res.json())
       .then((data) => console.log(data))
@@ -30,7 +40,10 @@ export const StudentsList = () => {
     const { search } = e.target;
    await fetch("http://localhost:4001/search_student", {
       method: "GET",
-      headers: { search: search.value },
+      headers: { 
+        search: search.value,
+        token: localStorage.getItem("token")
+      },
     })
       .then((res) => res.json())
       .then((data1) => setSearchStudent(data1))

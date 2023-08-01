@@ -5,7 +5,13 @@ export const AllTeachers = () => {
   const [teacherData, setTeacherData] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:4001/get_teacher")
+    fetch("http://localhost:4001/get_teacher", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        token: localStorage.getItem("token"),
+      },
+    })
       .then((res) => res.json())
       .then((data) => setTeacherData(data));
   }, []);
