@@ -34,6 +34,9 @@ td, th {
   padding-bottom: 10px;
 }
 
+tr:nth-child(even) {
+  background-color: #EAEDFA;
+}
 
 thead {
   background-color: #2F49D1;

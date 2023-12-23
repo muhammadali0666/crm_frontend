@@ -26,9 +26,9 @@ export const Login = () => {
         if (data.token) {
           localStorage.setItem("token", data.token);
           alert(data.msg);
-        }
-        if (data.token) {
           window.location.href = "/home";
+        }else {
+          alert(data.msg)
         }
       });
   };

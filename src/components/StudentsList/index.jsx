@@ -84,13 +84,13 @@ export const StudentsList = () => {
               ? searchStudent.map((element, idx) =>
                   element.length !== 0 ? (
                     <tr key={idx}>
-                      <th scope="col">{idx + 1}</th>
-                      <td>{element.name}</td>
-                      <td>{element.phoneNumber}</td>
-                      <td>{element.science}</td>
-                      <td>{element.parentName}</td>
-                      <td>{element.parentNumber}</td>
-                      <td>
+                      <th className="odd" scope="col">{idx + 1}</th>
+                      <td className="odd">{element.name}</td>
+                      <td className="odd">{element.phoneNumber}</td>
+                      <td className="odd">{element.science}</td>
+                      <td className="odd">{element.parentName}</td>
+                      <td className="odd">{element.parentNumber}</td>
+                      <td className="odd">
                         <img
                           src={Delete}
                           alt="delete"

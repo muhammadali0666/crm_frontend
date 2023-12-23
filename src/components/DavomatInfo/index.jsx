@@ -25,7 +25,7 @@ export const DavomatInfo = () => {
   }, []);
 
   useEffect(() => {
-    fetch(`http://localhost:4001/all_students_info_group/${id}`,{
+    fetch(`http://localhost:4001/all_students_info_group/${id}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

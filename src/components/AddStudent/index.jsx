@@ -22,13 +22,6 @@ export const AddStudent = () => {
 
   const handleData = async (e) => {
     e.preventDefault();
-
-    fetch("https://api.cloudinary.com/v1_1/dev4pmh5c/image/upload", {
-      method: "POST",
-      body: formData,
-    })
-      .then((response) => response.json())
-      .then((data) => {
         fetch("http://localhost:4001/add_student", {
           method: "POST",
           headers: {
@@ -48,7 +41,6 @@ export const AddStudent = () => {
           .then((data) => alert(data.msg))
           .catch((error) => console.log(error));
         window.location.reload(true);
-      });
   };
 
   /////////////////////////////////////////////////

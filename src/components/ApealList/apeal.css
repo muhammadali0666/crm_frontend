@@ -72,6 +72,9 @@ tr {
 .appeal_tr {
 border: none;
 }
+.appeal_tr:nth-child(even) {
+  background-color: red;
+}
 .appeal_th {
   width: 30%;
   border: none;

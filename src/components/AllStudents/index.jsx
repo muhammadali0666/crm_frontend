@@ -5,6 +5,8 @@ import { useState, useEffect } from "react";
 export const AllStudents = () => {
   const [studentData, setStudentData] = useState([]);
 
+  console.log(studentData);
+
   useEffect(() => {
     fetch("http://localhost:4001/get_students", {
       method: "GET",

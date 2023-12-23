@@ -46,7 +46,7 @@ export const ApealList = () => {
             </tr>
             <hr />
             <tr className="appeal_tr">
-              <th className="appeal_one" scope="col">1</th>
+              <th className="appeal_one" scope="col">2</th>
               <td className="appeal_td">Muhammad Aliyev</td>
               <td className="appeal_td">+998904565025</td>
               <td className="long_text">
@@ -66,7 +66,7 @@ export const ApealList = () => {
             </tr>
             <hr />
             <tr className="appeal_tr">
-              <th className="appeal_one" scope="col">1</th>
+              <th className="appeal_one" scope="col">3</th>
               <td className="appeal_td">Muhammad Aliyev</td>
               <td className="appeal_td">+998904565025</td>
               <td className="long_text">
