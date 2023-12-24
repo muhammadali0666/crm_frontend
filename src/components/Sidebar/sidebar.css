@@ -91,6 +91,7 @@ label #cancel {
   font-weight: 400;
   position: absolute;
   bottom: 30px;
+  line-height: 20px;
 }
 
 @media (max-width: 1130px) {

@@ -6,6 +6,7 @@
 }
 
 .header {
+  width: 100%;
   background-color: #fff;
   padding: 20px;
 }
@@ -45,6 +46,11 @@
 }
 
 @media (max-width: 1000px) {
+  .header {
+    width: 95vw;
+    background-color: #fff;
+    padding: 20px;
+  }
   .header_paragraph {
     font-size: 30px;
     color: #0061F7;
@@ -54,6 +60,11 @@
   }
 }
 @media (max-width: 520px) {
+  .header {
+    width: 100vw;
+    background-color: #fff;
+    padding: 20px;
+  }
   .header_paragraph {
     font-size: 30px;
     color: #0061F7;
@@ -71,7 +82,7 @@
 
 @media (max-width: 450px) {
   .header {
-    width: 100%;
+    width: 100vw;
     background-color: #fff;
     padding: 20px;
   }

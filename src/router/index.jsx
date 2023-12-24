@@ -6,7 +6,7 @@ import { Students } from "../pages/Students";
 import { Groups } from "../pages/Group";
 import { Payment } from "../pages/Payment";
 import { Attendance } from "../pages/Attendance";
-import { Apeal } from "../pages/Appeal/inde";
+import { Apeal } from "../pages/Appeal";
 import { NotFound } from "../pages/NotFound";
 import {GuruhInfo} from "../pages/GuruhInfo"
 import { InfoDavomat } from "../pages/InfoDavomat";

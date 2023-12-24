@@ -71,9 +71,11 @@ tr {
 /* .table_img {} */
 
 @media (max-width: 850px) {
+  table {
+    overflow-x: scroll !important;
+  }
   .apeal_list {
     margin-bottom: 70px;
-    overflow-x: scroll !important;
   }
 
   .apeal_list_box {
