@@ -1,6 +1,7 @@
 import "./payment.css";
 import Completed from "../../assets/completed.png";
 import { useState, useEffect } from "react";
+import Delete from "../../assets/delete.png";
 
 export const PaymentsList = () => {
   const [myData, setMyData] = useState([]);
@@ -35,6 +36,20 @@ export const PaymentsList = () => {
       .then((data) => setSearchPaymentors(data))
       .catch((err) => console.error(err));
     search.value = "";
+  };
+
+  const handleDelete = (e) => {
+    fetch(`http://localhost:4001/delete_paymentor/${e}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        token: localStorage.getItem("token"),
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => alert(data.msg))
+      .catch((error) => console.error(error));
+    window.location.reload();
   };
 
   return (
@@ -78,11 +93,12 @@ export const PaymentsList = () => {
                       <td>{element.tolovKuni}</td>
                       <td>
                         <img
-                          src={Completed}
+                          src={Delete}
                           alt="delete"
                           className="table_img"
-                          width={20}
-                          height={16}
+                          width={18}
+                          height={18}
+                          onClick={() => handleDelete(element.id)}
                         />
                       </td>
                     </tr>
@@ -100,11 +116,12 @@ export const PaymentsList = () => {
                       <td>{element.tolovKuni}</td>
                       <td>
                         <img
-                          src={Completed}
+                          src={Delete}
                           alt="delete"
                           className="table_img"
-                          width={20}
-                          height={16}
+                          width={18}
+                          height={18}
+                          onClick={() => handleDelete(element.id)}
                         />
                       </td>
                     </tr>

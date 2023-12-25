@@ -1,5 +1,6 @@
 import "./deletedstudents.css";
 import { useState, useEffect } from "react";
+import Delete from "../../assets/delete.png";
 
 export const AllDeletedStudents = () => {
   const [deletedStudents, setDeletedStudents] = useState([]);
@@ -16,6 +17,20 @@ export const AllDeletedStudents = () => {
       .then((data) => setDeletedStudents(data))
       .catch((err) => console.log(err));
   }, []);
+
+  const handleDelete = (e) => {
+    fetch(`http://localhost:4001/delete_removing_students/${e}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        token: localStorage.getItem("token"),
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => alert(data.msg))
+      .catch((error) => console.error(error));
+    window.location.reload();
+  };
   return (
     <div className="all_student all_student_extra">
       <div className="student_list_box">
@@ -28,6 +43,7 @@ export const AllDeletedStudents = () => {
               <th scope="col">Yo’nalish</th>
               <th scope="col">Ota-ona(F.I.SH)</th>
               <th scope="col">Ota-ona (Tel)</th>
+              <th scope="col">#</th>
             </tr>
           </thead>
           <tbody className="tbody">
@@ -40,6 +56,16 @@ export const AllDeletedStudents = () => {
                   <td>{element.science}</td>
                   <td>{element.parentName}</td>
                   <td>{element.parentNumber}</td>
+                  <td className="odd">
+                        <img
+                          src={Delete}
+                          alt="delete"
+                          className="table_img"
+                          width={18}
+                          height={18}
+                          onClick={() => handleDelete(element.id)}
+                        />
+                      </td>
                 </tr>
               ))}
           </tbody>
