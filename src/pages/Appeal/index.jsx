@@ -15,8 +15,8 @@ export const Apeal = () => {
         <div className="apeal_right_box">
           <Header name='Murojatlar'/>
           <div className="apeal_right_box_inner">
-            <ApealList/>
             <ApealTwoList/>
+            <ApealList/>
           </div>
         </div>
       </div>

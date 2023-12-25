@@ -73,7 +73,7 @@ tr {
 border: none;
 }
 .appeal_tr:nth-child(even) {
-  background-color: red;
+  background-color: #EAEDFA;
 }
 .appeal_th {
   width: 30%;

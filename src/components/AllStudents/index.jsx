@@ -26,7 +26,7 @@ export const AllStudents = () => {
       },
     })
       .then((res) => res.json())
-      .then((data) => console.log(data))
+      .then((data) => alert(data.msg))
       .catch((error) => console.error(error));
     window.location.reload();
   };
