@@ -1,7 +1,7 @@
 import "./header.css";
 import Mode from "../../assets/mode.png";
 import { useState, useEffect } from "react";
-// import Notificate from "../../assets/notificate.png";
+// import { DarkModeSwitch } from "react-toggle-dark-mode";
 
 export const Header = (props) => {
   let newDate = new Date();
@@ -9,15 +9,31 @@ export const Header = (props) => {
   let month = newDate.getMonth() + 1;
   let year = newDate.getFullYear();
 
-  const [theme, setTheme] = useState("light");
+  let getTheme = localStorage.getItem("theme");
+  const [theme, setTheme] = useState(getTheme);
+
+
+   !getTheme ? localStorage.setItem("theme", "light") : getTheme
+  
 
   const modeToggle = () => {
-    if (theme === "light") {
+    if (getTheme === "light") {
       setTheme("other");
-    } else  {
+      localStorage.setItem("theme", "other");
+    } else if (theme === "other") {
       setTheme("light");
+      localStorage.setItem("theme", "light");
+    } else {
+      setTheme("light");
+      localStorage.setItem("theme", "light");
     }
   };
+
+  // const [isDarkMode, setDarkMode] = useState(false);
+
+  // const toggleDarkMode = (checked) => {
+  //   setDarkMode(checked);
+  // };
 
   useEffect(() => {
     document.body.classList = theme;
@@ -37,6 +53,12 @@ export const Header = (props) => {
               Eng
             </option>
           </select>
+          {/* <DarkModeSwitch
+            style={{ marginBottom: "2rem" }}
+            checked={isDarkMode}
+            onChange={toggleDarkMode}
+            size={120}
+          /> */}
           <img
             onClick={modeToggle}
             src={Mode}

@@ -1,6 +1,7 @@
 import "./apealtwolist.css";
 import Delete from "../../assets/delete.png";
 import { useState, useEffect } from "react";
+import { ToastContainer, toast } from 'react-toastify';
 
 export const ApealTwoList = () => {
   const [data, setData] = useState([]);
@@ -27,13 +28,26 @@ export const ApealTwoList = () => {
       },
     })
       .then((res) => res.json())
-      .then((data) => alert(data.msg))
+      .then((data) => console.log(data.msg))
       .catch((error) => console.error(error));
-    window.location.reload();
+      toast.info('Message successfully deleted!', {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
+      setTimeout(() => {
+        window.location.reload();
+      },3000)
   };
 
   return (
     <div className="apeal_list">
+       <ToastContainer />
       <div className="apeal_list_header">
         <h3 className="apeal_list_paragraph">
           {nowDate.getDate()}.{nowDate.getMonth() + 1}.{nowDate.getFullYear()}{" "}

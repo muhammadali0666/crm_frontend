@@ -1,5 +1,6 @@
 import "./addgroup.css";
 import { useEffect, useState } from "react";
+import { ToastContainer, toast } from 'react-toastify';
 
 export const AddGroup = () => {
   const [fan, setFan] = useState("");
@@ -45,15 +46,29 @@ export const AddGroup = () => {
             }),
           })
             .then((res) => res.json())
-            .then((data) => alert(data.msg))
+            .then((data) => {
+              toast.info(data.msg, {
+              position: "top-right",
+              autoClose: 3000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: false,
+              draggable: true,
+              progress: undefined,
+              theme: "colored",
+            });
+            })
             .catch((error) => console.log(error));
-          window.location.reload(true);
+          setTimeout(() => {
+            location.reload()
+          },3500)
         }
       });
   };
 
   return (
     <div className="group">
+       <ToastContainer />
       <h2 className="group_paragraph">Yangi guruh qo’shish</h2>
       <form className="sudent_form" onSubmit={handleData}>
         <div className="group_box_wrapper">

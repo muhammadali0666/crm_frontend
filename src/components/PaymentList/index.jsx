@@ -2,6 +2,7 @@ import "./payment.css";
 import Completed from "../../assets/completed.png";
 import { useState, useEffect } from "react";
 import Delete from "../../assets/delete.png";
+import { ToastContainer, toast } from 'react-toastify';
 
 export const PaymentsList = () => {
   const [myData, setMyData] = useState([]);
@@ -47,13 +48,26 @@ export const PaymentsList = () => {
       },
     })
       .then((res) => res.json())
-      .then((data) => alert(data.msg))
+      .then((data) => console.log(data.msg))
       .catch((error) => console.error(error));
-    window.location.reload();
+      toast.info('Student successfully deleted!', {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
+      setTimeout(() => {
+        window.location.reload();
+      },3000)
   };
 
   return (
     <div className="payment_list">
+       <ToastContainer />
       <div className="payment_list_header">
         <h3 className="payment_list_paragraph">Bizning o’quvchilar</h3>
         {/* <img src={Search} alt="serach" className="payment_list_serch" width={24} height={24}/> */}

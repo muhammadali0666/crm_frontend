@@ -27,7 +27,7 @@
   width: 21vw;
   margin-bottom: 10px;
   font-weight: 600;
-  color: #000;
+  color: #0061F7;
   font-size: 20px;
 }
 
@@ -44,7 +44,7 @@
 }
 
 .payment_input::-webkit-input-placeholder {
-  color: #000;
+  color: #000000;
 }
 
 .payment_select {

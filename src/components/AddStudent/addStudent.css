@@ -7,6 +7,7 @@
   color: #0061F7;
   font-weight: 600;
   margin-bottom: 20px;
+  margin-top: 30px;
 }
 
 /* .sudent_form {} */
@@ -24,7 +25,7 @@
 .student_label {
   margin-bottom: 10px;
   font-weight: 600;
-  color: #000;
+  color: #0061F7;
   font-size: 20px;
 }
 
@@ -40,7 +41,7 @@
 }
 
 .student_input::-webkit-input-placeholder {
-  color: #000;
+  color: #000000;
 }
 .student_select {
   width: 22vw;

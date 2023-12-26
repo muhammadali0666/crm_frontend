@@ -4,6 +4,7 @@ import Done from "../../assets/done.png";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import UnPayed from "../../assets/close.png";
+import SwitchExample from "../Switches";
 
 export const DavomatInfo = () => {
   const { id } = useParams();
@@ -151,6 +152,9 @@ export const DavomatInfo = () => {
                   <p className="group_info_right_header_p group_info_right_header_p_extra">
                     O’quvchi ismi
                   </p>
+                  <p className="group_info_right_header_p group_info_right_header_p_extra">
+                    davomat
+                  </p>
                   {/* <p className="group_info_right_header_p group_info_right_header_p_extra">
                     Davomat
                   </p> */}
@@ -163,6 +167,7 @@ export const DavomatInfo = () => {
                         <p className="group_info_right_header_p">
                           {element.name}
                         </p>
+                        <SwitchExample/>
                         {/* <img
                           src={element.pay === true ? Done : UnPayed}
                           alt="img"

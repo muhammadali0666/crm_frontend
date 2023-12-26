@@ -1,5 +1,6 @@
 import "./addpayment.css";
 import { useState, useEffect } from "react";
+import { ToastContainer, toast } from 'react-toastify';
 
 export const AddPayment = () => {
   const [oquvchiIsm, setOquvchiIsm] = useState("");
@@ -22,7 +23,8 @@ export const AddPayment = () => {
       .catch((err) => console.error(err));
   }, []);
 
-  const handlePayment = () => {
+  const handlePayment = (evt) => {
+    evt.preventDefault()
     fetch(`http://localhost:4001/add_paymentor`, {
       method: "POST",
       headers: {
@@ -38,13 +40,27 @@ export const AddPayment = () => {
       }),
     })
       .then((res) => res.json())
-      .then((data) => alert(data.msg))
+      .then((data) => {
+        toast.info(data.msg, {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
+      })
       .catch((error) => console.error(error));
-    window.location.reload();
+      setTimeout(() => {
+        location.reload()
+      },3500)
   };
 
   return (
     <div className="payment">
+       <ToastContainer />
       <h2 className="payment_paragraph">To’lov qilish</h2>
       <form className="sudent_form" onSubmit={handlePayment}>
         <div className="payment_box_wrapper">

@@ -1,9 +1,13 @@
 import "./apeal.css";
 import Delete from "../../assets/delete.png";
 import { useState, useEffect } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const ApealList = () => {
   const [data, setData] = useState([]);
+
+  const notify = () => toast("Wow so easy!");
 
   useEffect(() => {
     fetch("http://localhost:4001/get_telegram_message", {
@@ -26,9 +30,19 @@ export const ApealList = () => {
       },
     })
       .then((res) => res.json())
-      .then((data) => alert(data.msg))
+      .then((data) => console.log(data.msg))
       .catch((error) => console.error(error));
     window.location.reload();
+    toast.warn('🦄 Wow so easy!', {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      });
   };
 
   return (
@@ -40,6 +54,7 @@ export const ApealList = () => {
           type="text"
           className="apeal_list_input"
           placeholder="search..."
+          
         /> */}
       </div>
       <div className="apeal_list_box">
@@ -75,7 +90,9 @@ export const ApealList = () => {
                   </th>
                   <td className="appeal_td">{element.firstName}</td>
                   <td className="appeal_td">@{element.userName}</td>
-                  <td className="appeal_td">{element.date} | {element.time}</td>
+                  <td className="appeal_td">
+                    {element.date} | {element.time}
+                  </td>
                   <td className="long_text">{element.text}</td>
                   <td className="appeal_one">
                     <img
@@ -84,7 +101,18 @@ export const ApealList = () => {
                       className="table_img"
                       width={18}
                       height={18}
-                      onClick={() => handleDelete(element.id)}
+                      onClick={() => {handleDelete(element.id)
+                        toast.info("TASK DELETED", {
+                          position: "bottom-left",
+                          autoClose: 3000,
+                          hideProgressBar: false,
+                          closeOnClick: true,
+                          pauseOnHover: true,
+                          draggable: true,
+                          progress: undefined,
+                          theme: "dark",
+                          })
+                      }}
                     />
                   </td>
                 </tr>

@@ -1,6 +1,5 @@
 .group {
   width: 100%;
-  margin-bottom: 50px;
 }
 
 .group_paragraph {
@@ -27,7 +26,7 @@
   width: 23vw;
   margin-bottom: 10px;
   font-weight: 600;
-  color: #000;
+  color: #0061F7;
   font-size: 20px;
 }
 
@@ -44,7 +43,7 @@
 }
 
 .group_input::-webkit-input-placeholder {
-  color: #000;
+  color: #000000;
 }
 
 .group_select {
