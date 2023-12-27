@@ -1,6 +1,8 @@
 import "./allteacher.css";
 import { useState, useEffect } from "react";
 import Delete from "../../assets/delete.png";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const AllTeachers = () => {
   const [teacherData, setTeacherData] = useState([]);
@@ -26,12 +28,26 @@ export const AllTeachers = () => {
       },
     })
       .then((res) => res.json())
-      .then((data) => alert(data.msg))
+      .then((data) => {
+        toast.info(data.msg, {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
+      })
       .catch((error) => console.error(error));
-    window.location.reload();
+      setTimeout(() => {
+        location.reload()
+      },3500)
   };
   return (
     <div className="all_student all_student_extra">
+       <ToastContainer />
       <div className="student_list_box">
         <table className="table">
           <thead>

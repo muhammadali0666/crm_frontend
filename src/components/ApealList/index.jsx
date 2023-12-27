@@ -1,13 +1,10 @@
 import "./apeal.css";
 import Delete from "../../assets/delete.png";
 import { useState, useEffect } from "react";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from 'react-toastify';
 
 export const ApealList = () => {
   const [data, setData] = useState([]);
-
-  const notify = () => toast("Wow so easy!");
 
   useEffect(() => {
     fetch("http://localhost:4001/get_telegram_message", {
@@ -30,23 +27,27 @@ export const ApealList = () => {
       },
     })
       .then((res) => res.json())
-      .then((data) => console.log(data.msg))
-      .catch((error) => console.error(error));
-    window.location.reload();
-    toast.warn('🦄 Wow so easy!', {
-      position: "top-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "colored",
+      .then((data) => {
+        toast.info(data.msg, {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
       });
+      })
+      .catch((error) => console.error(error));
+      setTimeout(() => {
+        location.reload()
+      },3500)
   };
 
   return (
     <div className="apeal_list">
+      <ToastContainer />
       <div className="apeal_list_header">
         <h3 className="apeal_list_paragraph">Barcha murojatlar</h3>
         {/* <img src={Search} alt="serach" className="apeal_list_serch" width={24} height={24}/> */}
@@ -101,7 +102,8 @@ export const ApealList = () => {
                       className="table_img"
                       width={18}
                       height={18}
-                      onClick={() => {handleDelete(element.id)
+                      onClick={() => {
+                        handleDelete(element.id);
                         toast.info("TASK DELETED", {
                           position: "bottom-left",
                           autoClose: 3000,
@@ -111,7 +113,7 @@ export const ApealList = () => {
                           draggable: true,
                           progress: undefined,
                           theme: "dark",
-                          })
+                        });
                       }}
                     />
                   </td>

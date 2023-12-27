@@ -48,11 +48,10 @@ export const PaymentsList = () => {
       },
     })
       .then((res) => res.json())
-      .then((data) => console.log(data.msg))
-      .catch((error) => console.error(error));
-      toast.info('Student successfully deleted!', {
+      .then((data) => {
+        toast.info(data.msg, {
         position: "top-right",
-        autoClose: 2000,
+        autoClose: 3000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: false,
@@ -60,9 +59,11 @@ export const PaymentsList = () => {
         progress: undefined,
         theme: "colored",
       });
+      })
+      .catch((error) => console.error(error));
       setTimeout(() => {
-        window.location.reload();
-      },3000)
+        location.reload()
+      },3500)
   };
 
   return (

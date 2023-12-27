@@ -1,6 +1,8 @@
 import "./studentsListt.css";
 import Delete from "../../assets/delete.png";
 import { useState, useEffect } from "react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const StudentsList = () => {
   const [studentData, setStudentData] = useState([]);
@@ -28,9 +30,19 @@ export const StudentsList = () => {
       },
     })
       .then((res) => res.json())
-      .then((data) => alert(data.msg))
-      .catch((error) => console.error(error));
-    window.location.reload();
+      .then((data) => {toast.info(data.msg, {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });})
+      setTimeout(() => {
+        window.location.reload();
+      },3000)
   };
 
   /////////////////////////////////////////////////////////////// SEARCH
@@ -53,6 +65,7 @@ export const StudentsList = () => {
 
   return (
     <div className="student_list">
+       <ToastContainer />
       <div className="student_list_header">
         <h3 className="student_list_paragraph">Bizning o’quvchilar</h3>
         {/* <img src={Search} alt="serach" className="student_list_serch" width={24} height={24}/> */}

@@ -1,5 +1,6 @@
 import "./addStudent.css";
 import { useState, useEffect } from "react";
+import { ToastContainer, toast } from 'react-toastify';
 
 export const AddStudent = () => {
   const [name, setName] = useState("");
@@ -38,9 +39,22 @@ export const AddStudent = () => {
           }),
         })
           .then((res) => res.json())
-          .then((data) => alert(data.msg))
-          .catch((error) => console.log(error));
-        window.location.reload(true);
+          .then((data) => {
+            toast.info(data.msg, {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+          });
+          })
+          .catch((error) => console.error(error));
+          setTimeout(() => {
+            location.reload()
+          },3500)
   };
 
   /////////////////////////////////////////////////
@@ -60,6 +74,7 @@ export const AddStudent = () => {
 
   return (
     <div className="student">
+       <ToastContainer />
       <h2 className="student_paragraph">Yangi o’quvchi qo’shish</h2>
       <form className="sudent_form" onSubmit={handleData}>
         <div className="student_box_wrapper">

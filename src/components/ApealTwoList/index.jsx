@@ -2,13 +2,14 @@ import "./apealtwolist.css";
 import Delete from "../../assets/delete.png";
 import { useState, useEffect } from "react";
 import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const ApealTwoList = () => {
   const [data, setData] = useState([]);
   const nowDate = new Date();
 
   useEffect(() => {
-    fetch("http://localhost:4001/get_telegram_message", {
+    fetch("http://localhost:4001/get_telegram_message_by_day", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -28,11 +29,10 @@ export const ApealTwoList = () => {
       },
     })
       .then((res) => res.json())
-      .then((data) => console.log(data.msg))
-      .catch((error) => console.error(error));
-      toast.info('Message successfully deleted!', {
+      .then((data) => {
+        toast.info(data.msg, {
         position: "top-right",
-        autoClose: 2000,
+        autoClose: 3000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: false,
@@ -40,9 +40,11 @@ export const ApealTwoList = () => {
         progress: undefined,
         theme: "colored",
       });
+      })
+      .catch((error) => console.error(error));
       setTimeout(() => {
-        window.location.reload();
-      },3000)
+        location.reload()
+      },3500)
   };
 
   return (
